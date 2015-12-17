@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace futboleros;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
@@ -28,7 +28,7 @@ class User extends Model implements AuthenticatableContract,
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password'];
+    protected $fillable = ['nombre', 'email', 'password','apellido','username','profile_id','categoria_user_id'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -45,5 +45,9 @@ class User extends Model implements AuthenticatableContract,
     //un usuario pertenece a una categoria de usuarios
     function categoria_user(){
         return $this->belongsTo('App\CategoriaUser');
+    }
+     //un usuario puede registrar muchos logs en el sistema
+    function logs(){
+        return $this->hasMany('App\Log');
     }
 }

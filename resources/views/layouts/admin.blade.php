@@ -26,20 +26,20 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Cinema Admin</a>
+                <a class="navbar-brand" href="index.html">Moderacion Futboleros</a>
             </div>
            
 
             <ul class="nav navbar-top-links navbar-right">
                  <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        {!!Auth::user()->name!!}<i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Ajustes</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="{!!URL::to('/logout')!!}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                 </li>
@@ -49,40 +49,62 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="#"><i class="fa fa-users fa-fw"></i> Usuario<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-users fa-fw"></i> Campeonatos<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{!!URL::to('/usuario/create')!!}"><i class='fa fa-plus fa-fw'></i> Agregar</a>
+                                    <a href="/campeonatos"><i class='fa fa-plus fa-fw'></i>Listado</a>
                                 </li>
                                 <li>
-                                    <a href="{!!URL::to('/usuario')!!}"><i class='fa fa-list-ol fa-fw'></i> Usuarios</a>
+                                    <a href="/campeonatos/create"><i class='fa fa-plus fa-fw'></i> Agregar</a>
                                 </li>
                             </ul>
                         </li>
+                       
                         <li>
-                            <a href="#"><i class="fa fa-film fa-fw"></i> Pelicula<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-film fa-fw"></i> Jornadas<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#"><i class='fa fa-plus fa-fw'></i> Agregar</a>
+                                    <a href="/jornadas"><i class='fa fa-plus fa-fw'></i>Listado</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class='fa fa-list-ol fa-fw'></i> Peliculas</a>
+                                    <a href="/jornadas/create"><i class='fa fa-plus fa-fw'></i> Agregar</a>
                                 </li>
                             </ul>
                         </li>
-
-                        <li>
-                            <a href="#"><i class="fa fa-child fa-fw"></i> Genero<span class="fa arrow"></span></a>
+                         <li>
+                            <a href="#"><i class="fa fa-film fa-fw"></i>Partidos<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#"><i class='fa fa-plus fa-fw'></i> Agregar</a>
+                                    <a href="/partidos"><i class='fa fa-plus fa-fw'></i>Listado</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class='fa fa-list-ol fa-fw'></i> Generos</a>
+                                    <a href="/partidos/create"><i class='fa fa-list-ol fa-fw'></i> Agregar</a>
                                 </li>
                             </ul>
                         </li>
-
+                         <li>
+                            <a href="#"><i class="fa fa-film fa-fw"></i> Equipos<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                 <li>
+                                    <a href="/equipos"><i class='fa fa-plus fa-fw'></i>Listado</a>
+                                </li>
+                                <li>
+                                    <a href="/equipos/create"><i class='fa fa-plus fa-fw'></i> Agregar</a>
+                                </li>
+                            </ul>
+                        </li>
+                         <li>
+                            <a href="#"><i class="fa fa-film fa-fw"></i>Usuarios<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                 <li>
+                                    <a href="/users"><i class='fa fa-plus fa-fw'></i>Listado</a>
+                                </li>
+                                <li>
+                                    <a href="/users/create"><i class='fa fa-plus fa-fw'></i> Agregar</a>
+                                </li>
+                            </ul>
+                        </li>
+                        
                     </ul>
                 </div>
             </div>
@@ -100,7 +122,6 @@
     {!!Html::script('js/bootstrap.min.js')!!}
     {!!Html::script('js/metisMenu.min.js')!!}
     {!!Html::script('js/sb-admin-2.js')!!}
-
 </body>
 
 </html>

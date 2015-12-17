@@ -10,8 +10,8 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','BackendController@login');
+Route::get('admin','BackendController@admin');
+Route::resource('users','UserController');
+Route::resource('campeonatos','CampeonatosController');
 Route::resource('login','AuthController');

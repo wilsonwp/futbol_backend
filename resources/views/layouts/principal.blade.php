@@ -1,75 +1,417 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<title>Cinema A Entertainment Category Flat Bootstarp Resposive Website Template | Home :: w3layouts</title>
-<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-<!-- Custom Theme files -->
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<!-- Custom Theme files -->
-<script src="js/jquery.min.js"></script>
-<!-- Custom Theme files -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Cinema Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!--webfont-->
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+	<!-- Define Charset -->
+	<meta charset="UTF-8">
+
+	<!-- Page Title -->
+	<title>Futboleros</title>
+
+	<!-- Responsive Metatag --> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Favicon -->
+       <link rel="shortcut icon" href="images/favicon.png">   
+	<!-- Stylesheet
+	===================================================================================================  -->
+	<link rel="stylesheet" href="font/fontello.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/media-queries.css">
+	<!-- Loader helper -->
+	<style id="loader_helper" type="text/css">
+		.tp-simpleresponsive >ul >li{visibility: hidden !important;}
+	</style>
 </head>
+
+
 <body>
-	<!-- header-section-starts -->
-	<div class="full">
-			<div class="menu">
-				<ul>
-					<li><a class="active" href="index.html"><i class="home"></i></a></li>
-					<li><a href="reviews.html"><div class="cat"><i class="watching"></i><i class="watching1"></i></div></a></li>
-					<li><a href="contact.html"><div class="cnt"><i class="contact"></i><i class="contact1"></i></div></a></li>
-				</ul>
+
+	<div id="loader">
+
+		<!-- Topbar -->
+		<section class="top-bar">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6 social-media">
+						
+					</div>
+					<div class="col-sm-6 data-info">
+						<p><i class="icon-mobile"></i> Soporte Tecnico 099 6264752</p>
+					</div>
+				</div>
 			</div>
-		<div class="main">
+		</section>
+		<!-- end Topbar -->
+	 	
+	 	<!-- Fixed navbar -->
+
+
+
 		
-		@yield('content')
+		<!-- Slider -->
+		<section class="slider" id="menu-slider">
+			<div class="container">
+				<div class="row">
+					@yield('content')
+				</div>
+			</div>
+		</section>
+		<!-- end Slider -->
+
 		
+		<!-- Features -->
+		<
+
+		<!-- end Classes -->
+
+
+		<!-- Upcoming Classes -->
 		
+		<!-- end Upcoming Classes -->
+
+
+		<!-- Teachers -->
 		
-	<div class="footer">
-		<h6>Disclaimer : </h6>
-		<p class="claim">This is a freebies and not an official website, I have no intention of disclose any movie, brand, news.My goal here is to train or excercise my skill and share this freebies.</p>
-		<a href="example@mail.com">example@mail.com</a>
-		<div class="copyright">
-			<p> Template by  <a href="http://w3layouts.com">  W3layouts</a></p>
-		</div>
-	</div>	
+
+		
+		<!-- Call to action -->
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<h6 class="footer_left">Backend</h6>
+						<ul class="footer_center">
+							
+						</ul>
+					</div>
+					<div class="col-sm-8">
+						<h6 class="footer_right">©Wp.</h6>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<a href="#" class="scrollup"><i class="icon-up-open"></i></a>      
+
 	</div>
+	<!-- end Loader -->
+
+	<!-- Modal 01-->
+	<div class="modal fade" id="class01" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h4 class="modal-title">Mathematic Classes</h4>
+	      </div>
+	      <div class="modal-body">
+	      	<figure>
+	      		<img src="img/classes-modal/01.jpg" alt="img">
+	      	</figure>
+	      	<h4>Description of the Course</h4>
+	      	<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+	      	<a href="http://cssarrowplease.com/" class="btn btn-default"> Suscribe now</a>
+	      </div>
+	      <div class="modal-footer"></div>
+	    </div>
+	  </div>
 	</div>
-			<script type="text/javascript">
-		$(window).load(function() {
-			
-		  $("#flexiselDemo1").flexisel({
-				visibleItems: 6,
-				animationSpeed: 1000,
-				autoPlay: true,
-				autoPlaySpeed: 3000,    		
-				pauseOnHover: false,
-				enableResponsiveBreakpoints: true,
-				responsiveBreakpoints: { 
-					portrait: { 
-						changePoint:480,
-						visibleItems: 2
-					}, 
-					landscape: { 
-						changePoint:640,
-						visibleItems: 3
-					},
-					tablet: { 
-						changePoint:768,
-						visibleItems: 4
-					}
-				}
-			});
-			});
-		</script>
-		<script type="text/javascript" src="js/jquery.flexisel.js"></script>
-	<div class="clearfix"></div>
+
+	<!-- Modal 02-->
+	<div class="modal fade" id="class02" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h4 class="modal-title">Mathematic Classes</h4>
+	      </div>
+	      <div class="modal-body">
+	      	<figure>
+	      		<img src="img/classes-modal/02.jpg" alt="img">
+	      	</figure>
+	      	<h4>Description of the Course</h4>
+	      	<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+	      	<a href="http://cssarrowplease.com/" class="btn btn-default"> Suscribe now</a>
+	      </div>
+	      <div class="modal-footer"></div>
+	    </div>
+	  </div>
+	</div>
+
+
+	<!-- Modal 03-->
+	<div class="modal fade" id="class03" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h4 class="modal-title" id="myModalLabel">Mathematic Classes</h4>
+	      </div>
+	      <div class="modal-body">
+	      	<figure>
+	      		<img src="img/classes-modal/03.jpg" alt="img">
+	      	</figure>
+	      	<h4>Description of the Course</h4>
+	      	<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+	      	<a href="http://cssarrowplease.com/" class="btn btn-default"> Suscribe now</a>
+	      </div>
+	      <div class="modal-footer"></div>
+	    </div>
+	  </div>
+	</div>
+
+
+	<!-- Modal 04-->
+	<div class="modal fade" id="class04" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h4 class="modal-title">Mathematic Classes</h4>
+	      </div>
+	      <div class="modal-body">
+	      	<figure>
+	      		<img src="img/classes-modal/01.jpg" alt="img">
+	      	</figure>
+	      	<h4>Description of the Course</h4>
+	      	<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+	      	<a href="http://cssarrowplease.com/" class="btn btn-default"> Suscribe now</a>
+	      </div>
+	      <div class="modal-footer"></div>
+	    </div>
+	  </div>
+	</div>
+
+
+	<!-- Modal 05-->
+	<div class="modal fade" id="class05" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h4 class="modal-title">Mathematic Classes</h4>
+	      </div>
+	      <div class="modal-body">
+	      	<figure>
+	      		<img src="img/classes-modal/02.jpg" alt="img">
+	      	</figure>
+	      	<h4>Description of the Course</h4>
+	      	<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+	      	<a href="http://cssarrowplease.com/" class="btn btn-default"> Suscribe now</a>
+	      </div>
+	      <div class="modal-footer"></div>
+	    </div>
+	  </div>
+	</div>
+
+
+	<!-- Modal 06-->
+	<div class="modal fade" id="class06" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h4 class="modal-title">Mathematic Classes</h4>
+	      </div>
+	      <div class="modal-body">
+	      	<figure>
+	      		<img src="img/classes-modal/03.jpg" alt="img">
+	      	</figure>
+	      	<h4>Description of the Course</h4>
+	      	<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+	      	<a href="http://cssarrowplease.com/" class="btn btn-default"> Suscribe now</a>
+	      </div>
+	      <div class="modal-footer"></div>
+	    </div>
+	  </div>
+	</div>
+
+
+	<!-- Modal 07-->
+	<div class="modal fade" id="class07" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h4 class="modal-title">Mathematic Classes</h4>
+	      </div>
+	      <div class="modal-body">
+	      	<figure>
+	      		<img src="img/classes-modal/01.jpg" alt="img">
+	      	</figure>
+	      	<h4>Description of the Course</h4>
+	      	<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+	      	<a href="http://cssarrowplease.com/" class="btn btn-default"> Suscribe now</a>
+	      </div>
+	      <div class="modal-footer"></div>
+	    </div>
+	  </div>
+	</div>
+
+
+	<!-- Modal 08-->
+	<div class="modal fade" id="class08" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h4 class="modal-title">Mathematics Classes</h4>
+	      </div>
+	      <div class="modal-body">
+	      	<figure>
+	      		<img src="img/classes-modal/02.jpg" alt="img">
+	      	</figure>
+	      	<h4>Description of the Course</h4>
+	      	<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+	      	<a href="http://cssarrowplease.com/" class="btn btn-default"> Suscribe now</a>
+	      </div>
+	      <div class="modal-footer"></div>
+	    </div>
+	  </div>
+	</div>
+
+
+	<!-- Modal Teacher 01-->
+	<div class="modal fade" id="teacher01" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h4 class="modal-title">Mathematics Teacher</h4>
+	      </div>
+	      <div class="modal-body">
+	      		<div class="row">
+	      			<div class="col-sm-4">
+	      				<figure>
+				      		<img src="img/teachers/teacher-01.jpg" alt="img">
+				      	</figure>
+	      			</div>
+	      			<div class="col-sm-8">
+	      				<h4>Meet Adam Smithson</h4>
+		      			<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+		      			<p>Stay in contact with this teacher: <a href="#"><i class="icon-twitter"></i></a><a href="#"><i class="icon-facebook"></i></a></p>
+	      			</div>
+	      		</div>
+	      </div>
+	      <div class="modal-footer"></div>
+	    </div>
+	  </div>
+	</div>
+
+	<!-- Modal Teacher 02-->
+	<div class="modal fade" id="teacher02" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h4 class="modal-title">Marketing Teacher</h4>
+	      </div>
+	      <div class="modal-body">
+	      		<div class="row">
+	      			<div class="col-sm-4">
+	      				<figure>
+				      		<img src="img/teachers/teacher-02.jpg" alt="img">
+				      	</figure>
+	      			</div>
+	      			<div class="col-sm-8">
+	      				<h4>Meet Adam Smithson</h4>
+		      			<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+		      			<p>Stay in contact with this teacher: <a href="#"><i class="icon-twitter"></i></a><a href="#"><i class="icon-facebook"></i></a></p>
+	      			</div>
+	      		</div>
+	      </div>
+	      <div class="modal-footer"></div>
+	    </div>
+	  </div>
+	</div>
+
+	<!-- Modal Teacher 03-->
+	<div class="modal fade" id="teacher03" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h4 class="modal-title">Web Design Teacher</h4>
+	      </div>
+	      <div class="modal-body">
+	      		<div class="row">
+	      			<div class="col-sm-4">
+	      				<figure>
+				      		<img src="img/teachers/teacher-03.jpg" alt="img">
+				      	</figure>
+	      			</div>
+	      			<div class="col-sm-8">
+	      				<h4>Meet Tom Redeert</h4>
+		      			<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+		      			<p>Stay in contact with this teacher: <a href="#"><i class="icon-twitter"></i></a><a href="#"><i class="icon-facebook"></i></a></p>
+	      			</div>
+	      		</div>
+	      </div>
+	      <div class="modal-footer"></div>
+	    </div>
+	  </div>
+	</div>
+
+
+	<!-- Modal Teacher 04-->
+	<div class="modal fade" id="teacher04" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h4 class="modal-title">SEO Teacher</h4>
+	      </div>
+	      <div class="modal-body">
+	      		<div class="row">
+	      			<div class="col-sm-4">
+	      				<figure>
+				      		<img src="img/teachers/teacher-04.jpg" alt="img">
+				      	</figure>
+	      			</div>
+	      			<div class="col-sm-8">
+	      				<h4>Meet Jake Valiner</h4>
+		      			<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+		      			<p>Stay in contact with this teacher: <a href="#"><i class="icon-twitter"></i></a><a href="#"><i class="icon-facebook"></i></a></p>
+	      			</div>
+	      		</div>
+	      </div>
+	      <div class="modal-footer"></div>
+	    </div>
+	  </div>
+	</div>
+
+
+
+
+	<div id='siteLoader'> 
+		<img src="img/loader.gif" class="loader" alt="loader"/> 
+    </div> 
+
+  <!-- ======================= JQuery libs =========================== -->
+    <!-- jQuery -->
+    <script src="js/jquery-1.9.1.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!--Scroll To-->         
+    <script src="js/nav/jquery.scrollTo.js"></script> 
+    <script src="js/nav/jquery.nav.js"></script> 
+
+	<!-- Responsive Video -->
+    <script src="js/jquery.fitvids.min.js"></script>
+    <script src="js/jquery.placeholder.min.js"></script>
+
+	<!-- Fixed menu -->
+    <script src="js/jquery-scrolltofixed.js"></script> 
+
+	<!-- Video -->
+    <script src="js/jquery.mb.YTPlayer.js"></script> 
+
+	<!-- Custom -->
+    <script src="js/script.js"></script>
+
+  <!-- ======================= End JQuery libs ======================= -->
+
 </body>
 </html>
