@@ -21,6 +21,16 @@ $message=Session::get('message')?>
                         <th>Fecha Fin</th>
                         
 		</thead>
+                @foreach($campeonatos as $campeonato)
+			<tbody>
+				<td>{{$campeonato->nombre}}</td>
+                                <td>{{$campeonato->alias}}</td>
+				<td>{{$campeonato->num_partidos}}</td>
+                                <td>{{$campeonato->fecha_inic}}</td>
+                                <td>{{$campeonato->fecha_fin}}</td>
+                                <td></td>
+			</tbody>
+		@endforeach
 	
 	
 	</table>

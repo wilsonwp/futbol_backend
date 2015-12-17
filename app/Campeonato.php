@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Campeonato extends Model
 {
-   //***** Relaciones entre las Clases****//
+    protected $fillable = array('nombre', 'alias', 'num_partidos','fecha_inic','fecha_fin');
+
+      //***** Relaciones entre las Clases****//
     //Un Campeonato Tiene Muchas Jornadas
     function jornadas(){
         return $this->hasMany('App\Jornada');

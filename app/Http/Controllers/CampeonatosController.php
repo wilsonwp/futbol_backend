@@ -27,6 +27,7 @@ class CampeonatosController extends Controller
      */
     public function create()
     {
+      
       return view('campeonatos.create');
     }
 
@@ -38,6 +39,17 @@ class CampeonatosController extends Controller
      */
     public function store(Request $request)
     {
+        if( \futboleros\Campeonato::create([
+            'nombre' =>$request['nombre'],
+            'alias' =>$request['alias'],
+            'num_partidos' =>$request['num_partidos'],
+            'fecha_inic'=>$request['fecha_inic'],
+            'fecha_fin' =>$request['fecha_fin'],
+        ])){
+         return redirect('campeonatos')->with('message','store');
+        }else{
+            return "fallo al registrar";
+        }
         //
     }
 
