@@ -18,7 +18,7 @@ class CampeonatosController extends Controller
      */
      public function index()
     {
-         $campeonatos = Campeonato::all();
+         $campeonatos = Campeonato::paginate(2);
          return view('campeonatos.index',  compact('campeonatos'));
     }
 
@@ -41,17 +41,16 @@ class CampeonatosController extends Controller
      */
     public function store(Request $request)
     {
-        if( Campeonato::create([
+         Campeonato::create([
             'nombre' =>$request['nombre'],
             'alias' =>$request['alias'],
             'num_partidos' =>$request['num_partidos'],
             'fecha_inic'=>$request['fecha_inic'],
             'fecha_fin' =>$request['fecha_fin'],
-        ])){
-         return redirect('campeonatos')->with('message','store');
-        }else{
-            return "fallo al registrar";
-        }
+        ]);
+        Session::flash('message','Campeonato Creado con Exito');
+        return Redirect::to('/campeonatos');
+        
         //
     }
 
@@ -104,6 +103,9 @@ class CampeonatosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Campeonato::destroy($id);
+        Session::flash('message','Campeonato Eliminado');
+        return Redirect::to('/campeonatos');
+        
     }
 }

@@ -12,7 +12,7 @@ class Equipo extends Model
     //***** Relaciones entre las Clases****//
     //Un equipo tiene un Tecnico
     function tecnico(){
-        return $this->hasOne('\futboleros\Tecnico');
+        return $this->belongsTo('\futboleros\Tecnico');
     }
     //Un Equipo pertenece a campeonato (Liga)
     function campeonato(){
@@ -20,7 +20,7 @@ class Equipo extends Model
     }
     //Un equipo tiene un Estadio
     function estadio(){
-        return $this->hasOne('\futboleros\Estadio');
+        return $this->belongsTo('\futboleros\Estadio');
     }
     //Un Equipo Tiene Muchos Juagadores
     function juagadors(){

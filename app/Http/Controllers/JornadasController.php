@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use futboleros\Http\Requests;
 use futboleros\Http\Controllers\Controller;
 use \futboleros\Jornada;
+use \futboleros\Campeonato;
+use Redirect;
+use Session;
 class JornadasController extends Controller
 {
     /**
@@ -16,7 +19,7 @@ class JornadasController extends Controller
     public function index()
     {
       
-       $jornadas = Jornada::all();
+      $jornadas = Jornada::paginate(10);
       return view('jornadas.index', ['jornadas' => $jornadas]);
     }
 
@@ -27,7 +30,7 @@ class JornadasController extends Controller
      */
     public function create()
     {
-      $campeonatos = \futboleros\Campeonato::lists('nombre','id');
+      $campeonatos = Campeonato::lists('nombre','id');
       return view('jornadas.create',compact('campeonatos'));
     }
 
@@ -70,6 +73,9 @@ class JornadasController extends Controller
      */
     public function edit($id)
     {
+       $jornada = Jornada::find($id);
+       $campeonatos = Campeonato::lists('nombre','id');
+       return view('jornadas.edit',['jornada'=>$jornada,'campeonatos'=>$campeonatos]);
         //
     }
 
@@ -82,7 +88,11 @@ class JornadasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $jornada = Jornada::find($id);
+        $jornada->fill($request->all());
+        $jornada->save();
+        Session::flash('message','Jornada actualizada con Exito');
+        return Redirect::to('/jornadas');
     }
 
     /**
@@ -91,8 +101,11 @@ class JornadasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+   public function destroy($id)
     {
-        //
+        Jornada::destroy($id);
+        Session::flash('message','Jornada Eliminada');
+        return Redirect::to('/jornadas');
+        
     }
 }

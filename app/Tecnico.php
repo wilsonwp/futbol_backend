@@ -10,6 +10,6 @@ class Tecnico extends Model
 //***** Relaciones entre las Clases****//
     //Un Tecnico Pertenece a un Equipo
    function equipo(){
-       return $this->belongsTo('\futboleros\Equipo');
+       return $this->hasMany('\futboleros\Equipo');
    }
 }

@@ -1,7 +1,4 @@
-@extends('layouts.admin')
-	@section('content')
-	{!!Form::model($equipo,['route'=>['equipos.update',$equipo->id],'method'=>'PUT'])!!}
-        <div class="">
+<div class="">
 		{!!Form::label('','Liga a que Pertenece')!!}
 		{!!Form::select('campeonato_id',$campeonatos,null,['class'=>'form-control'])!!}
 	</div>
@@ -33,7 +30,3 @@
 		{!!Form::label('','Nombre de la Hinchada:')!!}
 		{!!Form::text('nombre_hinchada',null,['class'=>'form-control','placeholder'=>'Ingrese Nombre de la Hichada'])!!}
 	</div>
-	{!!Form::submit('Editar',['class'=>'btn btn-primary'])!!}
-	{!!Form::close()!!}
-	@endsection
-  

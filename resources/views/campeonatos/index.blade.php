@@ -24,9 +24,11 @@
                                 <td>{{$campeonato->fecha_inic}}</td>
                                 <td>{{$campeonato->fecha_fin}}</td>
                                 <td>{!! link_to_route('campeonatos.edit', $title = 'editar', $parameters = $campeonato->id, $attributes = ['class'=>'btn btn-primary']);!!}</td>
+                                
 			</tbody>
 		@endforeach
 	
 	
 	</table>
+        {!!$campeonatos->render()!!}
 	@endsection

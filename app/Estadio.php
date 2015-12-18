@@ -9,6 +9,6 @@ class Estadio extends Model
         //***** Relaciones entre las Clases****//
     // un Estadio pertenece a un Equipo
     function equipo(){
-        return $this->belongsTo('App\Equipo');
+        return $this->hasMany('\futboleros\Equipo');
     }
 }

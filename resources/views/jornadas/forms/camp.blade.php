@@ -1,7 +1,4 @@
-@extends('layouts.admin')
-	@section('content')
-	{!!Form::open(['route'=>'jornadas.store', 'method'=>'POST'])!!}
-        <div class="">
+<div class="">
 		{!!Form::label('','Campeonato al que Pertenece')!!}
 		{!!Form::select('campeonato_id',$campeonatos,null,['class'=>'form-control'])!!}
 	</div>
@@ -13,7 +10,3 @@
 		{!!Form::label('','Fecha de la Jornada')!!}
 		{!!Form::date('fecha',null,['class'=>'form-control'])!!}
 	</div>
-	{!!Form::submit('Registrar',['class'=>'btn btn-primary'])!!}
-	{!!Form::close()!!}
-	@endsection
-  

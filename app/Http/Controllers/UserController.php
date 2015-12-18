@@ -4,7 +4,13 @@ namespace futboleros\Http\Controllers;
 
 use Illuminate\Http\Request;
 use futboleros\Http\Requests;
+use futboleros\Http\Requests\UserCreateRequest;
+use futboleros\Http\Requests\UserUpdateRequest;
 use futboleros\Http\Controllers\Controller;
+use futboleros\User;
+use futboleros\CategoriaUser;
+use Session;
+use Redirect;
 
 class UserController extends Controller
 {
@@ -15,7 +21,7 @@ class UserController extends Controller
      */
     public function index()
     {
-      $users = \futboleros\User::all();
+      $users = User::paginate(5);
       return view('usuarios.index',compact('users'));
     }
 
@@ -27,7 +33,7 @@ class UserController extends Controller
     public function create()
     {
       //aqui consulto los tipo de usuarios de la tabla categoria_user_id
-      $tipo_usuarios = \futboleros\CategoriaUser::lists('nombre_categoria','id');
+      $tipo_usuarios = CategoriaUser::lists('nombre_categoria','id');
       return view('usuarios.create',compact('tipo_usuarios'));
     }
 
@@ -37,7 +43,7 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserCreateRequest $request)
     {
        if( \futboleros\User::create([
             'nombre' =>$request['nombre'],
@@ -72,7 +78,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+      $user = User::find($id);
+       $tipo_usuarios = CategoriaUser::lists('nombre_categoria','id');
+       return view('usuarios.edit',['user'=>$user,'tipo_usuarios'=>$tipo_usuarios]);
     }
 
     /**
@@ -82,9 +90,13 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserUpdateRequest $request, $id)
     {
-        //
+         $user = User::find($id);
+        $user->fill($request->all());
+        $user->save();
+        Session::flash('message','Usuario Actualizado con Exito');
+        return Redirect::to('/users');
     }
 
     /**
@@ -95,6 +107,9 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::destroy($id);
+        Session::flash('message','Usuario Eliminado');
+        return Redirect::to('/users');
+        
     }
 }

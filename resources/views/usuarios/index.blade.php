@@ -1,15 +1,8 @@
 @extends('layouts.admin')
-<?php
-echo '<pre>';
-    var_dump($users->toArray()); // <---- or toJson()
-    echo '</pre>';
-
-$message=Session::get('message')?>
-
-@if($message == 'store')
+@if(Session::has('message'))
 <div class="alert alert-success alert-dismissible" role="alert">
   <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  Usuario creado exitosamente
+ {{Session::get('message')}}
 </div>
 @endif
 	@section('content')
@@ -31,8 +24,9 @@ $message=Session::get('message')?>
                                 <td>{{$user->email}}</td>
                                 <td>{{$user->username}}</td>
                                 <td>{{$user->password}}</td>
-                                <td><td>{!! link_to_route('user.edit', $title = 'editar', $parameters = $user->id, $attributes = ['class'=>'btn btn-primary']);!!}</td></td>
+                                <td>{!! link_to_route('users.edit', $title = 'editar', $parameters = $user->id, $attributes = ['class'=>'btn btn-primary']);!!}</td>
 			</tbody>
 		@endforeach
 	</table>
+          {!!$users->render()!!}
 	@endsection

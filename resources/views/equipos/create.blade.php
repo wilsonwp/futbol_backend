@@ -33,7 +33,6 @@
 		{!!Form::label('','Nombre de la Hinchada:')!!}
 		{!!Form::text('nombre_hinchada',null,['class'=>'form-control','placeholder'=>'Ingrese Nombre de la Hichada'])!!}
 	</div>
-	
 	{!!Form::submit('Registrar',['class'=>'btn btn-primary'])!!}
 	{!!Form::close()!!}
 	@endsection
