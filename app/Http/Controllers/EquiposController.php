@@ -1,12 +1,16 @@
 <?php
 
 namespace futboleros\Http\Controllers;
-
+use \futboleros\Equipo;
+use \futboleros\Campeonato;
+use \futboleros\Tecnico;
+use \futboleros\Estadio;
 use Illuminate\Http\Request;
+
 use futboleros\Http\Requests;
 use futboleros\Http\Controllers\Controller;
-use \futboleros\Jornada;
-class JornadasController extends Controller
+
+class EquiposController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +19,8 @@ class JornadasController extends Controller
      */
     public function index()
     {
-      
-       $jornadas = Jornada::all();
-      return view('jornadas.index', ['jornadas' => $jornadas]);
+      $equipos = Equipo::all();
+      return view('equipos.index', ['equipos' => $equipos]);
     }
 
     /**
@@ -27,8 +30,10 @@ class JornadasController extends Controller
      */
     public function create()
     {
-      $campeonatos = \futboleros\Campeonato::lists('nombre','id');
-      return view('jornadas.create',compact('campeonatos'));
+      $campeonatos = Campeonato::lists('nombre','id');
+      $tecnicos = Tecnico::lists('nombre','id');
+      $estadios = Estadio::lists('nombre','id');
+      return view('equipos.create',['campeonatos'=>$campeonatos,'tecnicos'=>$tecnicos,'estadios'=>$estadios]);
     }
 
     /**
@@ -39,16 +44,20 @@ class JornadasController extends Controller
      */
     public function store(Request $request)
     {
-         if( Jornada::create([
-            'numero' =>$request['numero'],
-            'fecha' =>$request['fecha'],
-            'campeonato_id' =>$request['campeonato_id']
+        if( Equipo::create([
+            'nombre' =>$request['nombre'],
+            'alias' =>$request['alias'],
+            'fecha_fundacion' =>$request['fecha_fundacion'],
+            'presidente_actual' =>$request['presidente_actual'],
+            'nombre_hinchada' =>$request['nombre_hinchada'],
+            'estadio_id' =>$request['estadio_id'],
+            'campeonato_id' =>$request['campeonato_id'],
+            'tecnico_id' =>$request['tecnico_id']
         ])){
-         return redirect('jornadas')->with('message','store');
+         return redirect('equipos')->with('message','store');
         }else{
             return "fallo al registrar";
         }
-        //
     }
 
     /**

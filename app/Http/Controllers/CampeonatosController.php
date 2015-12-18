@@ -1,7 +1,9 @@
 <?php
 
 namespace futboleros\Http\Controllers;
-
+use \futboleros\Campeonato;
+use Redirect;
+use Session;
 use Illuminate\Http\Request;
 
 use futboleros\Http\Requests;
@@ -16,7 +18,7 @@ class CampeonatosController extends Controller
      */
      public function index()
     {
-         $campeonatos = \futboleros\Campeonato::all();
+         $campeonatos = Campeonato::all();
          return view('campeonatos.index',  compact('campeonatos'));
     }
 
@@ -39,7 +41,7 @@ class CampeonatosController extends Controller
      */
     public function store(Request $request)
     {
-        if( \futboleros\Campeonato::create([
+        if( Campeonato::create([
             'nombre' =>$request['nombre'],
             'alias' =>$request['alias'],
             'num_partidos' =>$request['num_partidos'],
@@ -72,6 +74,8 @@ class CampeonatosController extends Controller
      */
     public function edit($id)
     {
+        $campeonato = Campeonato::find($id);
+        return view('campeonatos.edit',['campeonato'=>$campeonato]);
         //
     }
 
@@ -82,9 +86,14 @@ class CampeonatosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id, Request $request)
     {
-        //
+        $campeonato = Campeonato::find($id);
+        $campeonato->fill($request->all());
+        //dd($campeonato);
+        $campeonato->save();
+        Session::flash('message','Campeonato Actualizado con Exito');
+        return Redirect::to('/campeonatos');
     }
 
     /**

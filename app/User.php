@@ -40,14 +40,20 @@ class User extends Model implements AuthenticatableContract,
     //***** Relaciones entre las Clases****//
     // Un usuario tiene un Profile
     function profile(){
-        return $this->hasOne('App\profile');
+        return $this->hasOne('\futboleros\profile');
     }
     //un usuario pertenece a una categoria de usuarios
     function categoria_user(){
-        return $this->belongsTo('App\CategoriaUser');
+        return $this->belongsTo('\futboleros\CategoriaUser');
     }
      //un usuario puede registrar muchos logs en el sistema
     function logs(){
-        return $this->hasMany('App\Log');
+        return $this->hasMany('\futboleros\Log');
     }
+    function asignarValorPassword($valor){
+        if(!empty($valor)){
+            $this->attributes['password'] = \Hash::make($valor);
+        }
+    }
+    
 }

@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 	@section('content')
-	{!!Form::open(['route'=>'campeonatos.store', 'method'=>'POST'])!!}
+	{!!Form::model($campeonato,['route'=>['campeonatos.update',$campeonato->id],'method'=>'PUT'])!!}
 	<div class="form-group">
 		{!!Form::label('','Nombre de Campeonato:')!!}
 		{!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Ingrese nombre del Campeonato'])!!}
@@ -21,7 +21,7 @@
 		{!!Form::label('','Fecha Fin:')!!}
 		{!!Form::date('fecha_fin',null,['class'=>'form-control'])!!}
 	</div>
-	{!!Form::submit('Registrar',['class'=>'btn btn-primary'])!!}
+	{!!Form::submit('Editar',['class'=>'btn btn-primary'])!!}
 	{!!Form::close()!!}
 	@endsection
   

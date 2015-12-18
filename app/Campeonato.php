@@ -13,4 +13,8 @@ class Campeonato extends Model
     function jornadas(){
         return $this->hasMany('App\Jornada');
     }
+    //Un Campeonato Tiene Muchas Equipos
+    function equipos(){
+        return $this->hasMany('\futboleros\Equipo');
+    }
 }

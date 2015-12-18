@@ -14,4 +14,6 @@ Route::get('/','BackendController@login');
 Route::get('admin','BackendController@admin');
 Route::resource('users','UserController');
 Route::resource('campeonatos','CampeonatosController');
+Route::resource('equipos','EquiposController');
+Route::resource('jornadas','JornadasController');
 Route::resource('login','AuthController');

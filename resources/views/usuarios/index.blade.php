@@ -31,7 +31,7 @@ $message=Session::get('message')?>
                                 <td>{{$user->email}}</td>
                                 <td>{{$user->username}}</td>
                                 <td>{{$user->password}}</td>
-                                <td></td>
+                                <td><td>{!! link_to_route('user.edit', $title = 'editar', $parameters = $user->id, $attributes = ['class'=>'btn btn-primary']);!!}</td></td>
 			</tbody>
 		@endforeach
 	</table>

@@ -37,6 +37,15 @@ class JugadoresController extends Controller
      */
     public function store(Request $request)
     {
+        if( Jornada::create([
+            'numero' =>$request['numero'],
+            'fecha' =>$request['fecha'],
+            'campeonato_id' =>$request['campeonato_id']
+        ])){
+         return redirect('campeonatos')->with('message','store');
+        }else{
+            return "fallo al registrar";
+        }
         //
     }
 

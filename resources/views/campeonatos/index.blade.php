@@ -1,14 +1,8 @@
 @extends('admin')
-<?php 
-echo '<pre>';
-    var_dump($campeonatos->toArray()); // <---- or toJson()
-    echo '</pre>';
-$message=Session::get('message')?>
-
-@if($message == 'store')
+@if(Session::has('message'))
 <div class="alert alert-success alert-dismissible" role="alert">
   <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  Campeonato creado exitosamente
+ {{Session::get('message')}}
 </div>
 @endif
 @section('content')
@@ -19,6 +13,7 @@ $message=Session::get('message')?>
 			<th>No. de Partidos</th>
 			<th>Fecha Inicio</th>
                         <th>Fecha Fin</th>
+                        <th>Acciones</th>
                         
 		</thead>
                 @foreach($campeonatos as $campeonato)
@@ -28,7 +23,7 @@ $message=Session::get('message')?>
 				<td>{{$campeonato->num_partidos}}</td>
                                 <td>{{$campeonato->fecha_inic}}</td>
                                 <td>{{$campeonato->fecha_fin}}</td>
-                                <td></td>
+                                <td>{!! link_to_route('campeonatos.edit', $title = 'editar', $parameters = $campeonato->id, $attributes = ['class'=>'btn btn-primary']);!!}</td>
 			</tbody>
 		@endforeach
 	

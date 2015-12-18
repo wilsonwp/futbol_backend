@@ -72,6 +72,17 @@
                             </ul>
                         </li>
                          <li>
+                            <a href="#"><i class="fa fa-film fa-fw"></i> Equipos<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                 <li>
+                                    <a href="/equipos"><i class='fa fa-plus fa-fw'></i>Listado</a>
+                                </li>
+                                <li>
+                                    <a href="/equipos/create"><i class='fa fa-plus fa-fw'></i> Agregar</a>
+                                </li>
+                            </ul>
+                        </li>
+                         <li>
                             <a href="#"><i class="fa fa-film fa-fw"></i>Partidos<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
@@ -82,14 +93,15 @@
                                 </li>
                             </ul>
                         </li>
-                         <li>
-                            <a href="#"><i class="fa fa-film fa-fw"></i> Equipos<span class="fa arrow"></span></a>
+                        
+                        <li>
+                            <a href="#"><i class="fa fa-film fa-fw"></i> Jugadores<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                  <li>
-                                    <a href="/equipos"><i class='fa fa-plus fa-fw'></i>Listado</a>
+                                    <a href="/jugadores"><i class='fa fa-plus fa-fw'></i>Listado</a>
                                 </li>
                                 <li>
-                                    <a href="/equipos/create"><i class='fa fa-plus fa-fw'></i> Agregar</a>
+                                    <a href="/jugadores/create"><i class='fa fa-plus fa-fw'></i> Agregar</a>
                                 </li>
                             </ul>
                         </li>
