@@ -6,7 +6,10 @@ use Illuminate\Http\Request;
 
 use futboleros\Http\Requests;
 use futboleros\Http\Controllers\Controller;
-
+use futboleros\Campeonato;
+use futboleros\Jornada;
+use futboleros\Partido;
+use Illuminate\Routing\Route;
 class PartidosController extends Controller
 {
     /**
@@ -16,7 +19,8 @@ class PartidosController extends Controller
      */
     public function index()
     {
-        //
+      $partidos = Partido::paginate(10);
+      return view('partidos.index', ['partidos' => $partidos]);
     }
 
     /**
@@ -26,7 +30,9 @@ class PartidosController extends Controller
      */
     public function create()
     {
-        //
+      $campeonatos = Campeonato::lists('nombre','id');
+      $jornadas = Jornada::lists('numero','id');
+      return view('partidos.create',['campeonatos'=>$campeonatos,'jornadas'=>$jornadas]);
     }
 
     /**
@@ -35,11 +41,13 @@ class PartidosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+      public function store(Request $request)
     {
-        //
+       Equipo::create($request->all());
+        Session::flash('message','Partido Creado con Exito');
+        return Redirect::to('/equipos');
+        
     }
-
     /**
      * Display the specified resource.
      *
@@ -59,6 +67,10 @@ class PartidosController extends Controller
      */
     public function edit($id)
     {
+      $partido = Partido::find($id);
+      $campeonatos = Campeonato::lists('nombre','id');
+      $jornadas = Jornada::lists('numero','id');
+      return view('partidos.edit',['campeonatos'=>$campeonatos,'jornadas'=>$jornadas,'partido'=>$partido]);
         //
     }
 
@@ -71,6 +83,11 @@ class PartidosController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $partido = Partido::find($id);
+        $partido->fill($request->all());
+        $partido->save();
+        Session::flash('message','Partido actualizado con Exito');
+        return Redirect::to('/partidos');
         //
     }
 
@@ -80,8 +97,11 @@ class PartidosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+     public function destroy($id)
     {
-        //
+        Partido::destroy($id);
+        Session::flash('message','Partido Eliminado');
+        return Redirect::to('/partidos');
+        
     }
 }

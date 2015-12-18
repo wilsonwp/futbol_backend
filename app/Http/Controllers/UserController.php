@@ -11,14 +11,13 @@ use futboleros\User;
 use futboleros\CategoriaUser;
 use Session;
 use Redirect;
+use Illuminate\Routing\Route;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+     public function __construct(){
+        $this->middleware('auth');
+    }
     public function index()
     {
       $users = User::paginate(5);
@@ -45,7 +44,7 @@ class UserController extends Controller
      */
     public function store(UserCreateRequest $request)
     {
-       if( \futboleros\User::create([
+       if( User::create([
             'nombre' =>$request['nombre'],
             'apellido' =>$request['apellido'],
             'username' =>$request['username'],

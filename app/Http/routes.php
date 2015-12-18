@@ -10,10 +10,12 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::get('/','BackendController@login');
+Route::get('/','BackendController@index');
 Route::get('admin','BackendController@admin');
 Route::resource('users','UserController');
 Route::resource('campeonatos','CampeonatosController');
 Route::resource('equipos','EquiposController');
 Route::resource('jornadas','JornadasController');
-Route::resource('login','AuthController');
+Route::resource('partidos','PartidosController');
+Route::resource('login','LoginController');
+Route::get('logout','LoginController@logout');

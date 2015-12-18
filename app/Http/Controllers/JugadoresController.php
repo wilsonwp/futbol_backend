@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use futboleros\Http\Requests;
 use futboleros\Http\Controllers\Controller;
+use Illuminate\Routing\Route;
 
 class JugadoresController extends Controller
 {

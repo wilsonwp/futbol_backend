@@ -5,102 +5,60 @@ use \futboleros\Campeonato;
 use Redirect;
 use Session;
 use Illuminate\Http\Request;
-
 use futboleros\Http\Requests;
 use futboleros\Http\Controllers\Controller;
+use Illuminate\Routing\Route;
 
 class CampeonatosController extends Controller
-{
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+{   
+    
+    public function __construct(){
+        $this->middleware('auth');
+        $this->beforeFilter('@find',['only' => ['edit','update','destroy']]);
+    }
+    //este metodo busca los parametros que usan los metodos edit, update y destroy
+    public function find(Route $route){
+        $this->campeonato = Campeonato::find($route->getParameter('campeonatos'));
+   
+    }
      public function index()
     {
          $campeonatos = Campeonato::paginate(2);
          return view('campeonatos.index',  compact('campeonatos'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
       
       return view('campeonatos.create');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-         Campeonato::create([
-            'nombre' =>$request['nombre'],
-            'alias' =>$request['alias'],
-            'num_partidos' =>$request['num_partidos'],
-            'fecha_inic'=>$request['fecha_inic'],
-            'fecha_fin' =>$request['fecha_fin'],
-        ]);
+         Campeonato::create($request->all());
         Session::flash('message','Campeonato Creado con Exito');
         return Redirect::to('/campeonatos');
         
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        $campeonato = Campeonato::find($id);
-        return view('campeonatos.edit',['campeonato'=>$campeonato]);
+       return view('campeonatos.edit',['campeonato'=>$this->campeonato]);
         //
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update($id, Request $request)
     {
-        $campeonato = Campeonato::find($id);
-        $campeonato->fill($request->all());
+        $this->campeonato->fill($request->all());
         //dd($campeonato);
-        $campeonato->save();
+        $this->campeonato->save();
         Session::flash('message','Campeonato Actualizado con Exito');
         return Redirect::to('/campeonatos');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         Campeonato::destroy($id);
