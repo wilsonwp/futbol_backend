@@ -17,5 +17,7 @@ Route::resource('campeonatos','CampeonatosController');
 Route::resource('equipos','EquiposController');
 Route::resource('jornadas','JornadasController');
 Route::resource('partidos','PartidosController');
+Route::resource('jugadores','JugadoresController');
+Route::get('jugadoresList','JugadoresController@listing');
 Route::resource('login','LoginController');
 Route::get('logout','LoginController@logout');

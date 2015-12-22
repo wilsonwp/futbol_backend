@@ -11,10 +11,6 @@
 		{!!Form::text('email',null,['class'=>'form-control','placeholder'=>'Ingresa el Correo del usuario'])!!}
 	</div>
         <div class="form-group">
-		{!!Form::label('username','Username:')!!}
-		{!!Form::text('username',null,['class'=>'form-control','placeholder'=>'Ingresa el username'])!!}
-	</div>
-        <div class="form-group">
 		{!!Form::label('pass','Password:')!!}
 		{!!Form::text('password',null,['class'=>'form-control','placeholder'=>'Password que se va a Asignar'])!!}
 	</div>

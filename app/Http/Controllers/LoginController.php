@@ -95,6 +95,7 @@ class LoginController extends Controller
     }
     public function logout(){
         Auth::logout();
+        Session::flash('message','Usted Ha Cerrado Sesión');
         return Redirect::to('/');
     }
 }

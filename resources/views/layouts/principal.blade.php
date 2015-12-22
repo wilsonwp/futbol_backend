@@ -22,7 +22,7 @@
 		.tp-simpleresponsive >ul >li{visibility: hidden !important;}
 	</style>
 </head>
-
+@include('alerts.message')
 
 <body>
 

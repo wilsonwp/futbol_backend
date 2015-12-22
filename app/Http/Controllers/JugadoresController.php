@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 use futboleros\Http\Requests;
 use futboleros\Http\Controllers\Controller;
 use Illuminate\Routing\Route;
-
+use futboleros\Jugador;
+use futboleros\Equipo;
 class JugadoresController extends Controller
 {
     /**
@@ -17,7 +18,15 @@ class JugadoresController extends Controller
      */
     public function index()
     {
-        //
+       $equipos = Equipo::lists('nombre','id');
+       return view('jugadores.index',['equipos'=>$equipos]);
+    }
+    // Devolver lista de Jugadores Json
+    public function listing(){
+        $jugadores = Jugador::all();
+        return response()->json(
+                $jugadores->toArray()
+                );
     }
 
     /**
@@ -27,7 +36,8 @@ class JugadoresController extends Controller
      */
     public function create()
     {
-        //
+     $equipos = Equipo::lists('nombre','id');
+     return view('jugadores.create',['equipos'=>$equipos]);
     }
 
     /**
@@ -38,16 +48,14 @@ class JugadoresController extends Controller
      */
     public function store(Request $request)
     {
-        if( Jornada::create([
-            'numero' =>$request['numero'],
-            'fecha' =>$request['fecha'],
-            'campeonato_id' =>$request['campeonato_id']
-        ])){
-         return redirect('campeonatos')->with('message','store');
-        }else{
-            return "fallo al registrar";
-        }
-        //
+       
+       if($request->ajax()){
+           Jugador::create($request->all());
+           return response()->json([
+               
+               "mensaje"=>"Jugador Creado con Exito"
+           ]);
+       }
     }
 
     /**

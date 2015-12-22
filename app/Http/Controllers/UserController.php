@@ -44,18 +44,15 @@ class UserController extends Controller
      */
     public function store(UserCreateRequest $request)
     {
-       if( User::create([
+       User::create([
             'nombre' =>$request['nombre'],
             'apellido' =>$request['apellido'],
-            'username' =>$request['username'],
             'email'=>$request['email'],
             'categoria_user_id' =>$request['categoria_user_id'],
             'password'=> bcrypt($request['password'])
-        ])){
-         return redirect('users')->with('message','store');
-        }else{
-            return "fallo al registrar";
-        }
+        ]);
+        Session::flash('message','Usuario Creado con Exito');
+        return Redirect::to('/users');
     }
 
     /**
