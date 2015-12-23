@@ -3,84 +3,117 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/wp_project/resources/lang/es/validation.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/database/migrations/2015_12_15_150400_create_campeonatos_table.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/public/js/script.js</file>
-            <file>file:/C:/xampp/htdocs/wp_project/public/js/jquery-scrolltofixed.js</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/emails/registro.blade.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/equipos/create.blade.php</file>
             <file>file:/C:/xampp/htdocs/wp_project/database/migrations/2014_10_12_000000_create_users_table.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/database/migrations/2015_12_15_192208_create_users_table.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/public/js/jquery.min.js</file>
+            <file>file:/C:/xampp/htdocs/wp_project/public/js/script-crear.js</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/equipos/edit.blade.php</file>
             <file>file:/C:/xampp/htdocs/wp_project/config/database.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/database/migrations/2015_12_15_224911_create_posiciones_table.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/resources/lang/es/passwords.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/resources/views/welcome.blade.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/jugadores/modal-busqueda.blade.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/menus/suscriptor.blade.php</file>
             <file>file:/C:/xampp/htdocs/wp_project/app/Noticia.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Http/Requests/JugadoresRequest.php</file>
             <file>file:/C:/xampp/htdocs/wp_project/database/migrations/2015_12_15_163924_create_tecnicos_table.php</file>
             <file>file:/C:/xampp/htdocs/wp_project/public/js/metisMenu.min.js</file>
-            <file>file:/C:/xampp/htdocs/wp_project/app/Estadio.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/app/Jugador.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/app/Partido.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/public/js/hovers.js</file>
             <file>file:/C:/xampp/htdocs/wp_project/resources/views/admin.blade.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/database/migrations/2015_12_15_163253_create_puntaje_jugadores_table.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/equipos/index.blade.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/jugadores/forms/ajax.blade.php</file>
             <file>file:/C:/xampp/htdocs/wp_project/resources/lang/es/auth.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/app/Arbitro.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/app/Http/Requests/LoginRequest.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/app/LineaPartido.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/app/Http/Controllers/AuthController.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/resources/views/login.blade.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/resources/views/layouts/admin.blade.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/public/js/jquery.mb.YTPlayer.js</file>
-            <file>file:/C:/xampp/htdocs/wp_project/config/app.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/database/migrations/2015_12_15_172020_create_arbitros_table.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/app/User.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/public/js/sb-admin-2.js</file>
-            <file>file:/C:/xampp/htdocs/wp_project/app/Http/Controllers/UserController.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/database/migrations/2015_12_15_150342_create_jornadas_table.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/usuarios/forms/camp.blade.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Http/Middleware/EncryptCookies.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/alerts/ajax-auth.blade.php</file>
             <file>file:/C:/xampp/htdocs/wp_project/app/Http/Controllers/CampeonatosController.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/resources/views/campeonatos/create.blade.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/resources/views/campeonatos/index.blade.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/alerts/errors.blade.php</file>
             <file>file:/C:/xampp/htdocs/wp_project/app/Tecnico.php</file>
             <file>file:/C:/xampp/htdocs/wp_project/database/migrations/2015_12_15_184304_create_linea_partidos_table.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/resources/views/layouts/principal.blade.php</file>
             <file>file:/C:/xampp/htdocs/wp_project/public/css/animate-custom.css</file>
             <file>file:/C:/xampp/htdocs/wp_project/database/migrations/2015_12_15_160112_create_estadios_table.php</file>
             <file>file:/C:/xampp/htdocs/wp_project/app/Log.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/public/img/overlay_6.png</file>
-            <file>file:/C:/xampp/htdocs/wp_project/composer.json</file>
-            <file>file:/C:/xampp/htdocs/wp_project/resources/views/usuarios/create.blade.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/config/auth.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/partidos/index.blade.php</file>
             <file>file:/C:/xampp/htdocs/wp_project/database/migrations/2015_12_15_150326_create_partidos_table.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/app/CategoriaUser.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/app/Profile.php</file>
             <file>file:/C:/xampp/htdocs/wp_project/public/js/bootstrap.min.js</file>
             <file>file:/C:/xampp/htdocs/wp_project/public/img/to-top.png</file>
             <file>file:/C:/xampp/htdocs/wp_project/public/css/bootstrap.min.css</file>
-            <file>file:/C:/xampp/htdocs/wp_project/public/css/sb-admin-2.css</file>
-            <file>file:/C:/xampp/htdocs/wp_project/app/Campeonato.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/jornadas/edit.blade.php</file>
             <file>file:/C:/xampp/htdocs/wp_project/database/.gitignore</file>
             <file>file:/C:/xampp/htdocs/wp_project/app/Posicione.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/public/css/font-awesome.min.css</file>
             <file>file:/C:/xampp/htdocs/wp_project/public/js/jquery-1.9.1.min.js</file>
-            <file>file:/C:/xampp/htdocs/wp_project/app/Http/routes.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/app/PuntajeJugadore.php</file>
             <file>file:/C:/xampp/htdocs/wp_project/app/Equipo.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/alerts/ajax-success.blade.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Http/Middleware/VerifyCsrfToken.php</file>
             <file>file:/C:/xampp/htdocs/wp_project/app/Jornada.php</file>
             <file>file:/C:/xampp/htdocs/wp_project/database/migrations/2015_12_15_190702_create_categoria_users_table.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Http/Middleware/Authenticate.php</file>
             <file>file:/C:/xampp/htdocs/wp_project/public/css/metisMenu.min.css</file>
-            <file>file:/C:/xampp/htdocs/wp_project/public/js/jquery.fitvids.min.js</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/menus/colaborador.blade.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/config/mail.php</file>
             <file>file:/C:/xampp/htdocs/wp_project/resources/lang/es/pagination.php</file>
             <file>file:/C:/xampp/htdocs/wp_project/database/migrations/2014_10_12_100000_create_password_resets_table.php</file>
             <file>file:/C:/xampp/htdocs/wp_project/database/migrations/2015_12_16_092056_create_logs_table.php</file>
             <file>file:/C:/xampp/htdocs/wp_project/app/Http/Controllers/BackendController.php</file>
             <file>file:/C:/xampp/htdocs/wp_project/public/js/jquery.placeholder.min.js</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/menus/administrador.blade.php</file>
             <file>file:/C:/xampp/htdocs/wp_project/public/css/media-queries.css</file>
             <file>file:/C:/xampp/htdocs/wp_project/public/index.php</file>
             <file>file:/C:/xampp/htdocs/wp_project/database/migrations/2015_12_15_150226_create_noticias_table.php</file>
             <file>file:/C:/xampp/htdocs/wp_project/app/Comentario.php</file>
             <file>file:/C:/xampp/htdocs/wp_project/resources/views/usuarios/index.blade.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/database/migrations/2015_12_15_150247_create_profiles_table.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Http/Controllers/EquiposController.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/jugadores/create.blade.php</file>
             <file>file:/C:/xampp/htdocs/wp_project/public/css/style.css</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/lang/es/validation.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/database/migrations/2015_12_15_150400_create_campeonatos_table.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Http/Controllers/JornadasController.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Http/Requests/UserCreateRequest.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Http/Controllers/JugadoresController.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/database/migrations/2015_12_15_192208_create_users_table.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/public/js/jquery.min.js</file>
+            <file>file:/C:/xampp/htdocs/wp_project/database/migrations/2015_12_15_224911_create_posiciones_table.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Http/Middleware/RedirectIfAuthenticated.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/alerts/ajax-success-act.blade.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/lang/es/passwords.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/welcome.blade.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Http/Controllers/LoginController.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/alerts/message.blade.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Estadio.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Jugador.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Partido.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/jornadas/create.blade.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/jugadores/index.blade.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/database/migrations/2015_12_15_163253_create_puntaje_jugadores_table.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Arbitro.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Http/Requests/LoginRequest.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/LineaPartido.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/partidos/edit.blade.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/layouts/admin.blade.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/config/app.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/database/migrations/2015_12_15_172020_create_arbitros_table.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/partidos/create.blade.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/jugadores/modal.blade.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/User.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/public/js/sb-admin-2.js</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Http/Controllers/UserController.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/database/migrations/2015_12_15_150342_create_jornadas_table.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/campeonatos/create.blade.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/campeonatos/index.blade.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/layouts/principal.blade.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/public/img/overlay_6.png</file>
+            <file>file:/C:/xampp/htdocs/wp_project/composer.json</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/usuarios/create.blade.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/config/auth.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/CategoriaUser.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Profile.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/index.blade.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/public/css/sb-admin-2.css</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Campeonato.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/public/css/font-awesome.min.css</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/jornadas/index.blade.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Http/routes.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/PuntajeJugadore.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/menus/editor.blade.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/public/js/script-leer.js</file>
+            <file>file:/C:/xampp/htdocs/wp_project/public/js/jquery.fitvids.min.js</file>
+            <file>file:/C:/xampp/htdocs/wp_project/database/migrations/2015_12_15_150247_create_profiles_table.php</file>
         </group>
     </open-files>
 </project-private>

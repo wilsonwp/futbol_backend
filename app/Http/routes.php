@@ -21,3 +21,6 @@ Route::resource('jugadores','JugadoresController');
 Route::get('jugadoresList','JugadoresController@listing');
 Route::resource('login','LoginController');
 Route::get('logout','LoginController@logout');
+Route::resource('mails','MailController');
+Route::get('password/email','Auth\PasswordController@getEmail');
+Route::post('password/email','Auth\PasswordController@postEmail');

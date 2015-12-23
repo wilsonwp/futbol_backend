@@ -1,6 +1,9 @@
 @extends('layouts.admin')
 @section('content')
-@include('alerts.ajax-success',['equipos'=>$equipos])
+@include('alerts.ajax-auth')
+@include('alerts.ajax-success')
+
+
 {!!Form::open()!!}
 <input type="hidden" name="_token" value="{{csrf_token()}}" id="token">
     @include('jugadores.forms.ajax')

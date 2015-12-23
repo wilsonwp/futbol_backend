@@ -43,6 +43,12 @@ $('#registro').click(
                  $('#estatura').val('');
                  $('#descripcion').val('');
                  $('#equipo_id').val('');
-             }
+             },
+            error: function(msj){
+               console.log(msj.responseJSON.nombre);
+               $("#msj").html(msj.responseJSON.nombre);
+               $("#msj-error").fadeIn();
+               
+            }
          });
         });

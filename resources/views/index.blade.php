@@ -21,6 +21,14 @@
 					</div>
 					{!!Form::submit('Iniciar',['class'=>'btn btn-primary'])!!}
                                             {!!Form::close()!!}
+                                          <div>
+					{!!link_to('password/email',$title='Olvido Contraseña?',$attributes = null, $secure = null)!!}
 					</div>
+                                            
+					</div>
+                                       
+                                        </div>
+                                        
+
 
 @stop

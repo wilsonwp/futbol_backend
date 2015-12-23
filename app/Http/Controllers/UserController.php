@@ -11,12 +11,20 @@ use futboleros\User;
 use futboleros\CategoriaUser;
 use Session;
 use Redirect;
+use Mail;
 use Illuminate\Routing\Route;
 
 class UserController extends Controller
 {
-     public function __construct(){
+    
+    public function __construct(){
         $this->middleware('auth');
+        $this->beforeFilter('@find',['only' => ['emailSender']]);
+    }
+  
+    public function find(Route $route){
+        $this->user = User::find($route->getParameter('users'));
+   
     }
     public function index()
     {
@@ -44,6 +52,7 @@ class UserController extends Controller
      */
     public function store(UserCreateRequest $request)
     {
+       
        User::create([
             'nombre' =>$request['nombre'],
             'apellido' =>$request['apellido'],
@@ -51,8 +60,16 @@ class UserController extends Controller
             'categoria_user_id' =>$request['categoria_user_id'],
             'password'=> bcrypt($request['password'])
         ]);
+       $this->emailSender($request['email']);
         Session::flash('message','Usuario Creado con Exito');
         return Redirect::to('/users');
+    }
+    function emailSender($email){
+         Mail::send('emails.registro', ['email' => $email], function ($m) use ($email) {
+            $m->from('garcia.solutions@gmail.com', 'Futboleros');
+
+            $m->to($email, 'suscriptor')->subject('Prueba!');
+        });
     }
 
     /**

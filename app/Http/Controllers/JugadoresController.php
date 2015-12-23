@@ -1,21 +1,22 @@
 <?php
 
 namespace futboleros\Http\Controllers;
-
 use Illuminate\Http\Request;
-
 use futboleros\Http\Requests;
+use futboleros\Http\Requests\JugadoresRequest;
 use futboleros\Http\Controllers\Controller;
 use Illuminate\Routing\Route;
 use futboleros\Jugador;
 use futboleros\Equipo;
 class JugadoresController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   public function __construct(){
+        $this->middleware('auth');
+        $this->beforeFilter('@find',['only' => ['edit','update','destroy']]);
+    }
+   public function find(Route $route){
+       $this->jugador = Jugador::find($route->getParameter('jugadores'));
+   }
     public function index()
     {
        $equipos = Equipo::lists('nombre','id');
@@ -46,7 +47,7 @@ class JugadoresController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(JugadoresRequest $request)
     {
        
        if($request->ajax()){
@@ -77,7 +78,12 @@ class JugadoresController extends Controller
      */
     public function edit($id)
     {
-        //
+           return response()->json(
+                $this->jugador->toArray()
+                );
+  
+        
+      
     }
 
     /**
@@ -89,7 +95,12 @@ class JugadoresController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->jugador->fill($request->all());
+        $this->jugador->save();
+        return response()->json([
+            
+            'mensaje'=>'Actualizado con Exito'
+        ]);
     }
 
     /**
@@ -100,6 +111,9 @@ class JugadoresController extends Controller
      */
     public function destroy($id)
     {
-        //
+       $this->jugador->delete();
+       return response()->json([
+           'mensaje'=>'Borrado'
+       ]);
     }
 }
