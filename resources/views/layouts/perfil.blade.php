@@ -44,7 +44,7 @@
  <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="/perfiles/show"><i class="fa fa-gear fa-fw"></i>Perfil</a>
+                        <li><a href="/perfiles"><i class="fa fa-gear fa-fw"></i>Perfil</a>
                         </li>
                         <li class="divider"></li>
                         <li><a href="{!!URL::to('/logout')!!}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
@@ -55,20 +55,7 @@
 
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        @if(Auth::user()->categoria_user_id == 5)
-                                @include('menus.administrador')
-                            @elseif(Auth::user()->categoria_user_id == 4)
-                                @include('menus.editor')
-                            @elseif(Auth::user()->categoria_user_id == 3)
-                                @include('menus.autor')
-                            @elseif(Auth::user()->categoria_user_id == 2)
-                                @include('menus.colaborador')
-                            @elseif(Auth::user()->categoria_user_id == 1)
-                                @include('menus.suscriptor')
-                        @endif
-                        
-                    </ul>
+                    
                 </div>
             </div>
 

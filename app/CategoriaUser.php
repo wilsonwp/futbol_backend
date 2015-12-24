@@ -9,6 +9,6 @@ class CategoriaUser extends Model
         //***** Relaciones entre las Clases****//
     //Una categoria de usuarios tiene muchos Usuarios
     function users(){
-        return $this->hasMany('App\User');
+        return $this->hasMany('\futboleros\User');
     }
 }

@@ -58,6 +58,7 @@ class UserController extends Controller
             'apellido' =>$request['apellido'],
             'email'=>$request['email'],
             'categoria_user_id' =>$request['categoria_user_id'],
+           'estatus' =>0,
             'password'=> bcrypt($request['password'])
         ]);
        $this->emailSender($request['email']);
@@ -82,6 +83,7 @@ class UserController extends Controller
     {
         //
     }
+   
 
     /**
      * Show the form for editing the specified resource.

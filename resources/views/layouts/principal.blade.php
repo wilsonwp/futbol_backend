@@ -11,13 +11,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Favicon -->
        <link rel="shortcut icon" href="images/favicon.png">   
-	<!-- Stylesheet
-	===================================================================================================  -->
-	<link rel="stylesheet" href="font/fontello.css">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/media-queries.css">
-	<!-- Loader helper -->
+       
+         {!!Html::style('css/bootstrap.min.css')!!}
+         {!!Html::style('css/style.css')!!}
 	<style id="loader_helper" type="text/css">
 		.tp-simpleresponsive >ul >li{visibility: hidden !important;}
 	</style>
@@ -98,25 +94,18 @@
 
 
 	<div id='siteLoader'> 
-		<img src="img/loader.gif" class="loader" alt="loader"/> 
+		{!!Html::image('img/loader.gif')!!} 
     </div> 
 
   <!-- ======================= JQuery libs =========================== -->
-    <!-- jQuery -->
-    <script src="js/jquery-1.9.1.min.js"></script>
-
-    <!-- Bootstrap -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!--Scroll To-->         
-    <script src="js/nav/jquery.scrollTo.js"></script> 
-    <script src="js/nav/jquery.nav.js"></script> 
-
-	<!-- Responsive Video -->
-    <script src="js/jquery.fitvids.min.js"></script>
-    <script src="js/jquery.placeholder.min.js"></script>
-	<!-- Custom -->
-    <script src="js/script-crear.js"></script>
+  
+  
+    {!!Html::script('js/jquery.min.js')!!}
+    {!!Html::script('js/bootstrap.min.js')!!}
+    {!!Html::script('js/metisMenu.min.js')!!}
+    {!!Html::script('js/sb-admin-2.js')!!}
+    {!!Html::script('js/script-crear.js')!!}
+    @yield('scripts')
 
   <!-- ======================= End JQuery libs ======================= -->
 
