@@ -8,7 +8,7 @@ class Equipo extends Model
 
 
 {
-    protected $fillable = ['nombre','alias','fecha_fundacion','presidente_actual','nombre_hinchada','activado','campeonato_id','estadio_id','tecnico_id'];
+    protected $fillable = ['nombre','alias','fecha_fundacion','presidente_actual','nombre_hinchada','activado','campeonato_id','estadio_id','tecnico_id','nombre_estadio'];
     //***** Relaciones entre las Clases****//
     //Un equipo tiene un Tecnico
     function tecnico(){
@@ -18,12 +18,15 @@ class Equipo extends Model
     function campeonato(){
         return $this->belongsTo('\futboleros\Campeonato');
     }
-    //Un equipo tiene un Estadio
-    function estadio(){
-        return $this->belongsTo('\futboleros\Estadio');
-    }
     //Un Equipo Tiene Muchos Juagadores
     function juagadors(){
         return $this->hasMany('\futboleros\Jugador');
+    }
+    //metodo para  select dinamico
+    public static function get_equipos($id){
+        return Equipo::where('campeonato_id','=',$id)->get();
+    }
+    public static function get_estadio($id){
+        return Equipo::where('id','=',$id)->get();
     }
 }

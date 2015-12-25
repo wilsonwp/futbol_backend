@@ -22,7 +22,8 @@ class JornadasController extends Controller
     {
       
       $jornadas = Jornada::paginate(10);
-      return view('jornadas.index', ['jornadas' => $jornadas]);
+      $campeonatos = Campeonato::lists('nombre','id');
+      return view('jornadas.index', ['jornadas' => $jornadas,'campeonatos',$campeonatos]);
     }
 
     public function create()
@@ -33,17 +34,22 @@ class JornadasController extends Controller
 
     public function store(Request $request)
     {
-         if( Jornada::create([
+          Jornada::create([
             'numero' =>$request['numero'],
-             'show'=> 'Fecha No.'.$request['numero'],
+            'show'=> 'Fecha No.'.$request['numero'],
             'fecha' =>$request['fecha'],
             'campeonato_id' =>$request['campeonato_id']
-        ])){
-         return redirect('jornadas')->with('message','store');
-        }else{
-            return "fallo al registrar";
-        }
+        ]);
+        Session::flash('message','Jornada Creada con Exito');
+        return Redirect::to('/jornadas');
         //
+    }
+     // Devolver lista de Jornadas Json
+    public function listing(){
+        $jornadas = Jornada::all();
+        return response()->json(
+                $jornadas->toArray()
+                );
     }
 
     public function show($id)

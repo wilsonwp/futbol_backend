@@ -1,24 +1,19 @@
-@extends('admin')
-@if(Session::has('message'))
-<div class="alert alert-success alert-dismissible" role="alert">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
- {{Session::get('message')}}
-</div>
-@endif
+@extends('layouts.admin')
+@include('alerts.message')
 @section('content')
 	<table class="table">
 		<thead>
-			<th>Equipo Local</th>
-                        <th>Equipo Visitante</th>
-			<th></th>
+			<th>Liga</th>
+                        <th>Equipo Local</th>
+			<th>Equipo visitante</th>
                         <th>Estatus del Partido</th>
                         <th>Acciones</th>
                         
 		</thead>
                 @foreach($partidos as $partido)
 			<tbody>
-				<td>{{$partido->nombre}}</td>
-                                <td>{{$partido->alias}}</td>
+				<td>{{$partido->campeonato->nombre}}</td>
+                                <td></td>
 				<td>{{$partido->num_partidos}}</td>
                                 <td>{{$partido->fecha_inic}}</td>
                                 <td>{{$partido->fecha_fin}}</td>

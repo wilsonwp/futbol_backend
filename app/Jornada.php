@@ -12,6 +12,10 @@ class Jornada extends Model
     function campeonato(){
         return $this->belongsTo('\futboleros\Campeonato');
     }
+    // este metodo es para los select dinamicos
+    public static function get_jornadas($id){
+        return Jornada::where('campeonato_id','=',$id)->get();
+    }
     //Una Jornada Tiene Muchos Partidos
     function partidos(){
         return $this->hasMany('App\Partido');

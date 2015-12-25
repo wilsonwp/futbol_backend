@@ -10,7 +10,7 @@
       {!!Form::label('','Peso:')!!}
      {!!Form::text('peso',null,['id'=>'peso','class'=>'form-control','placeholder'=>'Ingrese Peso Jugador'])!!}
       {!!Form::label('','Equipo al que Pertenece:')!!}
-   {!!Form::select('equipo_id',$equipos,null,['class'=>'form-control'])!!}
+   {!!Form::select('equipo_id',$equipos,null,['class'=>'form-control','id'=>'equipo_id'])!!}
    {!!Form::label('','Estatura:')!!}
      {!!Form::text('estatura',null,['id'=>'estatura','class'=>'form-control','placeholder'=>'Ingrese Estatura'])!!}
       {!!Form::label('','Descripcion:')!!}

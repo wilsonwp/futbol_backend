@@ -1,4 +1,4 @@
-@extends('admin')
+@extends('layouts.admin')
 @section('content')
 	<table class="table">
 		<thead>
@@ -22,10 +22,11 @@
 			<td>{{$equipo->alias}}</td>
                         <td>{{$equipo->fecha_fundacion}}</td>
                         <td>{{$equipo->presidente_actual}}</td>
-                        <th>{{$equipo->nombre_hinchada}}</td>
-                        <td>{{$equipo->activado}}</td>
-                        <td>{{$equipo->estadio->nombre}}</td>
+                        <td>{{$equipo->nombre_hinchada}}</td>
+                        <td>{{$equipo->presidente_actual}}</td>
+                        <td>{{$equipo->nombre_estadio}}</td>
                         <td>{{$equipo->tecnico->nombre}}</td>
+                      
                         <td>{!! link_to_route('equipos.edit', $title = 'editar', $parameters = $equipo->id, $attributes = ['class'=>'btn btn-primary']);!!}</td>
                         
                         

@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+@include('alerts.validacion')
 	@section('content')
 	{!!Form::open(['route'=>'jornadas.store', 'method'=>'POST'])!!}
         <div class="">

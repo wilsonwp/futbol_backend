@@ -6,12 +6,14 @@
 <table class="table">
     <thead>
     <th>Nombre</th>
-    <th>Operaciones</th>
+    <th>Alias</th>
+    <th>Descripcion</th>
+    <th>Acciones</th>
     </thead>
     <tbody id="datos"> </tbody>
    
 </table>
 @endsection
 @section('scripts')
-{!!Html::script('js/script-leer.js')!!}
+{!!Html::script('js/jugadores/script-leer.js')!!}
 @endsection

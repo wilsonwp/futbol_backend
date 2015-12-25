@@ -8,7 +8,7 @@ function cargar(){
    $("#datos").empty();
    $.get(route,function(resp){
        $(resp).each(function(key,value){
-          tablaDatos.append("<tr><td>"+value.nombre+"</td><td>"+value.alias+"</td><td><button value="+value.id+" OnClick='mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button><button class='btn btn-danger' value="+value.id+" OnClick='eliminar(this);'>Eliminar</button></td></tr>");
+          tablaDatos.append("<tr><td>"+value.nombre+"</td><td>"+value.alias+"</td><td>"+value.descripcion+"</td><td><button value="+value.id+" OnClick='mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Ver Ficha</button><button class='btn btn-danger' value="+value.id+" OnClick='eliminar(this);'>Eliminar</button></td></tr>");
        });
    
    
@@ -36,6 +36,11 @@ $("#actualizar").click(function(){
     var id = $("#id").val();
     var nombre = $("#nombre").val();
     var alias = $("#alias").val();
+    var equipo_id = $("#equipo_id").val();
+    var descripcion = $("#descripcion").val();
+    var estatura  = $("#estatura").val();
+    var peso = $("#peso").val();
+    var nacionalidad = $("#nacionalidad").val();
     route =  "http://localhost:8000/jugadores/"+id+"";
     token = $("#token").val();
     
@@ -46,7 +51,13 @@ $("#actualizar").click(function(){
              dataType: 'json',
              data: {
                  nombre: nombre,
-                 alias: alias
+                 alias: alias,
+                 equipo_id: equipo_id,
+                 descripcion: descripcion,
+                 estatura: estatura,
+                 peso: peso,
+                 nacionalidad: nacionalidad
+                 
                 },
              success: function(){
                  cargar();

@@ -6,13 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Partido extends Model
 {
+    protected $fillable= ['estadio','equipo_visitante','equipo_local','jornada_id','nombre-arbitro','campeonato_id'];
   //***** Relaciones entre las Clases****//
   // Un Partido Pertenece a Una Jornada
     function jornada(){
-        return $this->belongsTo('App\Jornada');
+        return $this->belongsTo('futboleros\Jornada');
     }
-    // Un partido lo pita un Arbitro
-     function arbitro(){
-        return $this->belongsTo('App\Arbitro');
+    function campeonato(){
+        return $this->belongsTo('futboleros\Campeonato');
     }
+    
 }

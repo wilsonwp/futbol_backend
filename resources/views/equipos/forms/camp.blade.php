@@ -6,14 +6,15 @@
 		{!!Form::label('','Tecnico del Equipo')!!}
 		{!!Form::select('tecnico_id',$tecnicos,null,['class'=>'form-control'])!!}
 	</div>
-          <div class="">
-		{!!Form::label('','Estadio del Equipo')!!}
-		{!!Form::select('estadio_id',$estadios,null,['class'=>'form-control'])!!}
-	</div>
-	<div class="form-group">
+        <div class="form-group">
 		{!!Form::label('','Nombre del Equipo:')!!}
 		{!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Ingrese el Nombre del Equipo'])!!}
 	</div>
+          <div class="">
+		{!!Form::label('','Estadio del Equipo')!!}
+		{!!Form::text('nombre_estadio',null,['class'=>'form-control'])!!}
+	</div>
+	
         <div class="form-group">
 		{!!Form::label('','Alias:')!!}
 		{!!Form::text('alias',null,['class'=>'form-control','placeholder'=>'Ingrese Alias'])!!}

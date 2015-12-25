@@ -10,7 +10,6 @@
     {!!Html::style('css/bootstrap.min.css')!!}
     {!!Html::style('css/metisMenu.min.css')!!}
     {!!Html::style('css/sb-admin-2.css')!!}
-    {!!Html::style('css/font-awesome.min.css')!!}
 </head>
 
 <body>
@@ -32,12 +31,8 @@
            
 
             <ul class="nav navbar-top-links navbar-right">
-                <form class="navbar-form navbar-left" role="search">
-                        <div class="form-group">
-                 <input type="text" class="form-control" placeholder="Search">
-                        </div>
-              <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
-                </form>
+                @yield('search')
+
                  <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                     @if (Auth::check()){!!Auth::user()->nombre!!} @else Sesion no Iniciada @endif 

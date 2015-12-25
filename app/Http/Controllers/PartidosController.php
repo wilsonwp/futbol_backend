@@ -5,11 +5,16 @@ namespace futboleros\Http\Controllers;
 use Illuminate\Http\Request;
 
 use futboleros\Http\Requests;
+use futboleros\Http\PartidoRequests;
 use futboleros\Http\Controllers\Controller;
 use futboleros\Campeonato;
 use futboleros\Jornada;
 use futboleros\Partido;
+use futboleros\Equipo;
 use Illuminate\Routing\Route;
+use Auth;
+use Session;
+use Redirect;
 class PartidosController extends Controller
 {
     /**
@@ -21,6 +26,7 @@ class PartidosController extends Controller
     {
       $partidos = Partido::paginate(10);
       return view('partidos.index', ['partidos' => $partidos]);
+      
     }
 
     /**
@@ -34,7 +40,29 @@ class PartidosController extends Controller
       $jornadas = Jornada::lists('numero','id');
       return view('partidos.create',['campeonatos'=>$campeonatos,'jornadas'=>$jornadas]);
     }
-
+    public function get_jornada(Request $request,$id){
+        $jornadas = Jornada::get_jornadas($id);
+            return response()->json($jornadas);
+        if($request->ajax()){
+            $jornadas = Jornada::get_jornadas($id);
+            return response()->json($jornadas);
+        }
+    }
+    public function get_equipo(Request $request,$id){
+        $equipos = Equipo::get_equipos($id);
+            return response()->json($equipos);
+        if($request->ajax()){
+            $equipos = Equipo::get_equipos($id);
+            return response()->json($equipos);
+        }
+    }
+     public function get_estadio(Request $request,$id){
+      
+        if($request->ajax()){
+            $equipos = Equipo::get_estadio($id);
+            return response()->json($equipos);
+        }
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -43,9 +71,9 @@ class PartidosController extends Controller
      */
       public function store(Request $request)
     {
-       Equipo::create($request->all());
+       Partido::create($request->all());
         Session::flash('message','Partido Creado con Exito');
-        return Redirect::to('/equipos');
+        return Redirect::to('/partidos');
         
     }
     /**
