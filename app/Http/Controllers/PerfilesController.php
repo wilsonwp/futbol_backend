@@ -74,7 +74,11 @@ class PerfilesController extends Controller
      */
     public function show()
     {
-       return view('perfiles.show');
+       $perfil = User::find(Auth::user()->id);
+       $categoria = $perfil->categoria_user->nombre_categoria;
+      // $user->categoria_user->nombre_categoria;
+       //dd($categoria);
+       return view('perfiles.show',['categoria'=>$categoria]);
         
         
     }
@@ -103,9 +107,15 @@ class PerfilesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(Request $request)
+    { 
+        $user = User::find(Auth::user()->id);
+        $user->fill($request->all());
+        $user->save();
+        return response()->json([
+            
+            'mensaje'=>'Actualizado con Exito'
+        ]);
     }
 
     /**

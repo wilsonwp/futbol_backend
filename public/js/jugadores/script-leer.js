@@ -18,6 +18,7 @@ function cargar(){
 function mostrar(btn){
     var route = 'http://localhost:8000/jugadores/'+btn.value+'/edit';
     $.get(route,function(res){
+         $("#id") .val(res.id);
         $("#nombre") .val(res.nombre);
         $("#alias") .val(res.alias);
         $("#fecha_nacimiento") .val(res.fecha_nac);
