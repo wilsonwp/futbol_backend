@@ -31,3 +31,8 @@ Route::get('verPerfil','PerfilesController@listing');
 Route::get('select_jornadas/{id}','PartidosController@get_jornada');
 Route::get('select_equipos/{id}','PartidosController@get_equipo');
 Route::get('select_estadio/{id}','PartidosController@get_estadio');
+Route::get('search_jugadores/{nombre}','JugadoresController@search_jugador');
+Route::resource('noticias','NoticiasController');
+Route::group(array('middleware' => 'auth'), function(){
+    Route::controller('filemanager', 'FilemanagerLaravelController');
+});

@@ -61,15 +61,15 @@ class UserController extends Controller
            'estatus' =>0,
             'password'=> bcrypt($request['password'])
         ]);
-       $this->emailSender($request['email']);
+       $this->emailSender($request['email'],$request['password']);
         Session::flash('message','Usuario Creado con Exito');
         return Redirect::to('/users');
     }
-    function emailSender($email){
-         Mail::send('emails.registro', ['email' => $email], function ($m) use ($email) {
+    function emailSender($email,$password){
+         Mail::send('emails.registro', ['email' => $email,'password' => $password], function ($m) use ($email) {
             $m->from('garcia.solutions@gmail.com', 'Futboleros');
 
-            $m->to($email, 'suscriptor')->subject('Prueba!');
+            $m->to($email, 'suscriptor')->subject('Datos de Ingreso a Backend del Sistema');
         });
     }
 

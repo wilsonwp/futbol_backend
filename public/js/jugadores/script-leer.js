@@ -7,7 +7,9 @@ function cargar(){
    var route = 'http://localhost:8000/jugadoresList';
    $("#datos").empty();
    $.get(route,function(resp){
+       
        $(resp).each(function(key,value){
+           
           tablaDatos.append("<tr><td>"+value.nombre+"</td><td>"+value.alias+"</td><td>"+value.descripcion+"</td><td><button value="+value.id+" OnClick='mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Ver Ficha</button><button class='btn btn-danger' value="+value.id+" OnClick='eliminar(this);'>Eliminar</button></td></tr>");
        });
    

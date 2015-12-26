@@ -8,6 +8,7 @@ use futboleros\Http\Controllers\Controller;
 use Illuminate\Routing\Route;
 use futboleros\Jugador;
 use futboleros\Equipo;
+use DB;
 class JugadoresController extends Controller
 {
    public function __construct(){
@@ -115,5 +116,12 @@ class JugadoresController extends Controller
        return response()->json([
            'mensaje'=>'Borrado'
        ]);
+    }
+    public function search_jugador($nombre =''){
+        $jugador = DB::table('jugadors')->where('nombre', 'LIKE', '%' . $nombre . '%')->get();
+        $this->jugador = $jugador;
+        return response()->json(
+                $this->jugador
+                );
     }
 }

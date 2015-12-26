@@ -1,8 +1,13 @@
-<?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+<table>
+    <thead>
+    <caption>Datos de Ingreso en Backend Futboleros</caption>
+        
+    </thead>
+    <tbody>
+        <tr>
+            <td>Correo:</td><td>{{$email}}</td>
+            <td>Contraseña:</td><td>{{$password}}</td>
+        </tr>
+    </tbody>
+    <tr><td></td></tr>
+</table>

@@ -11,5 +11,5 @@
 {!!Form::close()!!}
 @endsection
 @section('scripts')
-{!!Html::script('js/script-crear.js')!!}
+{!!Html::script('js/jugadores/script-crear.js')!!}
 @endsection
