@@ -21,7 +21,7 @@ function mostrar(btn){
     var route = 'http://localhost:8000/jugadores/'+btn.value+'/edit';
     $.get(route,function(res){
          $("#id") .val(res.id);
-        $("#nombre") .val(res.nombre);
+        $("#nombre") .val(res.nombre_jugador);
         $("#alias") .val(res.alias);
         $("#fecha_nacimiento") .val(res.fecha_nac);
         $("#nacionalidad") .val(res.nacionalidad);
@@ -53,7 +53,7 @@ $("#actualizar").click(function(){
              type: 'PUT',
              dataType: 'json',
              data: {
-                 nombre: nombre,
+                 nombre_jugador: nombre,
                  alias: alias,
                  equipo_id: equipo_id,
                  descripcion: descripcion,

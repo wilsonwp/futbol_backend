@@ -10,10 +10,13 @@ class Jugador extends Model{
     //***** Relaciones entre las Clases****//
     // Jugador Pertenece a un Equipo
     function equipo(){
-        return $this->belongsTo('App\Equipo');
+        return $this->belongsTo('\futboleros\Equipo');
     }
     // Jugador Pertenece a una Posicion
     function posicione(){
-        return $this->belongsTo('App\Posicione');
+        return $this->belongsTo('\futboleros\Posicione');
+    }
+    function goles(){
+        return $this->hasMany('\futboleros\Gol');
     }
 }

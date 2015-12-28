@@ -18,6 +18,13 @@ class Partido extends Model
     public function equipos(){
         return $this->belongsToMany('futboleros\Equipo');
     }
+    function goles(){
+        return $this->hasMany('\futboleros\Gol');
+    }
+    public static function get_estatus($estatus){
+       $partidos= Partido::where('estatus_partido','=',$estatus)->get();
+       return $partidos->toArray();
+    }
     
     
 }

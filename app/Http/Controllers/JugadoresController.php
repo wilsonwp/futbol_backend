@@ -20,7 +20,7 @@ class JugadoresController extends Controller
    }
     public function index()
     {
-       $equipos = Equipo::lists('nombre','id');
+       $equipos = Equipo::lists('nombre_equipo','id');
        return view('jugadores.index',['equipos'=>$equipos]);
     }
     // Devolver lista de Jugadores Json

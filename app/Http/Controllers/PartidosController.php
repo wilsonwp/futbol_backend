@@ -37,11 +37,6 @@ class PartidosController extends Controller
          * 
          */
        $partidos = Partido::all();
-       foreach ($partidos as $partido):
-          
-          // dd($partido);
-           
-       endforeach;
      // dd($partidos);
       return view('partidos.index', ['partidos' => $partidos]);
       
@@ -81,6 +76,14 @@ class PartidosController extends Controller
             $equipos = Equipo::get_estadio($id);
             return response()->json($equipos);
         }
+    }
+     public function get_estatus(Request $request,$id){
+            if($request->ajax()){
+                $partidos = Partido::get_estatus($id);
+                return response()->json($partidos);
+            }
+            
+       
     }
     /**
      * Store a newly created resource in storage.
