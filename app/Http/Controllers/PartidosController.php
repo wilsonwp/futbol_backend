@@ -9,12 +9,14 @@ use futboleros\Http\PartidoRequests;
 use futboleros\Http\Controllers\Controller;
 use futboleros\Campeonato;
 use futboleros\Jornada;
+use futboleros\EquipoPartido;
 use futboleros\Partido;
 use futboleros\Equipo;
 use Illuminate\Routing\Route;
 use Auth;
 use Session;
 use Redirect;
+use DB;
 class PartidosController extends Controller
 {
     /**
@@ -24,8 +26,25 @@ class PartidosController extends Controller
      */
     public function index()
     {
-      $partidos = Partido::paginate(10);
+        /*
+      $partidos = DB::table('equipo_partido')
+            ->join('equipos', 'equipos.id', '=','equipo_partido.equipo_id' )
+            ->join('partidos', 'partidos.id', '=','equipo_partido.partido_id' )
+            ->join('campeonatos', 'equipos.campeonato_id', '=','campeonatos.id' )
+            ->groupBy('equipo_partido.id')
+            ->get()
+              ;
+         * 
+         */
+       $partidos = Partido::all();
+       foreach ($partidos as $partido):
+          
+          // dd($partido);
+           
+       endforeach;
+     // dd($partidos);
       return view('partidos.index', ['partidos' => $partidos]);
+      
       
     }
 
@@ -36,7 +55,7 @@ class PartidosController extends Controller
      */
     public function create()
     {
-      $campeonatos = Campeonato::lists('nombre','id');
+      $campeonatos = Campeonato::lists('nombre_campeonato','id');
       $jornadas = Jornada::lists('numero','id');
       return view('partidos.create',['campeonatos'=>$campeonatos,'jornadas'=>$jornadas]);
     }
@@ -71,7 +90,20 @@ class PartidosController extends Controller
      */
       public function store(Request $request)
     {
-       Partido::create($request->all());
+          $partido = new Partido;
+          $partido->create($request->all());
+          $id_partido = $partido->all()->last();
+         $detalle_partido1 = new EquipoPartido;
+         $detalle_partido1->create([
+        'partido_id'=>$id_partido->id,
+         'equipo_id' => $request['equipo_local']
+            ]);
+         $detalle_partido2 = new EquipoPartido;
+         $detalle_partido2->create([
+        'partido_id'=>$id_partido->id,
+         'equipo_id' => $request['equipo_visitante']
+            ]);
+       
         Session::flash('message','Partido Creado con Exito');
         return Redirect::to('/partidos');
         

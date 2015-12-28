@@ -8,7 +8,7 @@
 	</div>
         <div class="form-group">
 		{!!Form::label('','Nombre del Equipo:')!!}
-		{!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Ingrese el Nombre del Equipo'])!!}
+		{!!Form::text('nombre_equipo',null,['class'=>'form-control','placeholder'=>'Ingrese el Nombre del Equipo'])!!}
 	</div>
           <div class="">
 		{!!Form::label('','Estadio del Equipo')!!}

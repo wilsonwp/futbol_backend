@@ -4,7 +4,7 @@ namespace futboleros\Http\Requests;
 
 use futboleros\Http\Requests\Request;
 
-class UserCreateRequest extends Request
+class NoticiasRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,12 @@ class UserCreateRequest extends Request
     public function rules()
     {
         return [
-          'nombre' =>'required',
-          'email' =>'required',
-          'password'=>'required'
+            'titulo'=>'required',
+            'contenido'=>'required',
+            'user_id'=>'required'
+            
+            
+           
         ];
     }
 }

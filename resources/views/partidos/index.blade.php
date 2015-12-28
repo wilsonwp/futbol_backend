@@ -12,17 +12,17 @@
 		</thead>
                 @foreach($partidos as $partido)
 			<tbody>
-				<td>{{$partido->campeonato->nombre}}</td>
-                                <td></td>
-				<td>{{$partido->num_partidos}}</td>
-                                <td>{{$partido->fecha_inic}}</td>
-                                <td>{{$partido->fecha_fin}}</td>
-                                <td>{!! link_to_route('partidos.edit', $title = 'editar', $parameters = $partido->id, $attributes = ['class'=>'btn btn-primary']);!!}</td>
+                             
+				<td>{{$partido->campeonato->nombre_campeonato}}</td>
+                                @foreach($partido->equipos as $part)
+                                     <td>{{$part->nombre_equipo}}</td>
+                                @endforeach
+                               
+				<td>{!! link_to_route('partidos.edit', $title = 'editar', $parameters = $partido->id, $attributes = ['class'=>'btn btn-primary']);!!}</td>
                                 
 			</tbody>
 		@endforeach
 	
 	
 	</table>
-        {!!$partidos->render()!!}
 	@endsection

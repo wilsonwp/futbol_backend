@@ -3,12 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/wp_project/public/js/partidos/script-leer.js</file>
-            <file>file:/C:/xampp/htdocs/wp_project/app/Http/Requests/PartidoRequest.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/config/app.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/resources/views/partidos/index.blade.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/resources/views/usuarios/index.blade.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/app/Http/Controllers/PartidosController.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Http/Controllers/NoticiasController.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/noticias/create.blade.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Http/routes.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/noticias/forms/camp.blade.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/layouts/admin.blade.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/public/js/noticias/script-leer.js</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/noticias/index.blade.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/User.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Http/Requests/UserCreateRequest.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Http/Controllers/JugadoresController.php</file>
         </group>
     </open-files>
 </project-private>

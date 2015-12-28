@@ -8,7 +8,7 @@ class Equipo extends Model
 
 
 {
-    protected $fillable = ['nombre','alias','fecha_fundacion','presidente_actual','nombre_hinchada','activado','campeonato_id','estadio_id','tecnico_id','nombre_estadio'];
+    protected $fillable = ['nombre_equipo','alias','fecha_fundacion','presidente_actual','nombre_hinchada','activado','campeonato_id','estadio_id','tecnico_id','nombre_estadio'];
     //***** Relaciones entre las Clases****//
     //Un equipo tiene un Tecnico
     function tecnico(){
@@ -28,5 +28,8 @@ class Equipo extends Model
     }
     public static function get_estadio($id){
         return Equipo::where('id','=',$id)->get();
+    }
+    public function partidos(){
+        return $this->belongsToMany('futboleros\Partido');
     }
 }

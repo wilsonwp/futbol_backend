@@ -1,11 +1,13 @@
 @extends('layouts.admin')
 @section('content')
+@include('alerts.validacion')
 @include('alerts.ajax-auth')
 @include('alerts.ajax-success')
-{!!Form::open()!!}
+{!!Form::open(['route'=>'noticias.store', 'method'=>'POST'])!!}
 <input type="hidden" name="_token" value="{{csrf_token()}}" id="token">
-    @include('noticias.forms.ajax')
-    {!!link_to('#',$title = 'Registrar',$attributes =['id'=>'registro','class'=>'btn btn-primary'],$secure = null )!!}
+
+    @include('noticias.forms.camp')
+{!!Form::submit('Publicar',['class'=>'btn btn-primary'])!!}
 {!!Form::close()!!}
 @endsection
 @section('scripts')

@@ -9,8 +9,8 @@ $("#campeonato").change(function(event){
         $("#visitante").empty();
         $("#local").empty();
         for (i=0; i<response.length; i++){
-            $("#visitante").append("<option value='"+response[i].id+"'>"+response[i].nombre+"</option>");
-             $("#local").append("<option value='"+response[i].id+"'>"+response[i].nombre+"</option>");
+            $("#visitante").append("<option value='"+response[i].id+"'>"+response[i].nombre_equipo+"</option>");
+             $("#local").append("<option value='"+response[i].id+"'>"+response[i].nombre_equipo+"</option>");
         }
     });
     

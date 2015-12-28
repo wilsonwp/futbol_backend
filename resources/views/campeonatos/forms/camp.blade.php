@@ -1,6 +1,6 @@
 <div class="form-group">
 		{!!Form::label('','Nombre de Campeonato:')!!}
-		{!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Ingrese nombre del Campeonato'])!!}
+		{!!Form::text('nombre_campeonato',null,['class'=>'form-control','placeholder'=>'Ingrese nombre del Campeonato'])!!}
 	</div>
         <div class="form-group">
 		{!!Form::label('alias','Alias del Campeonato:')!!}

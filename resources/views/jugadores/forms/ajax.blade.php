@@ -15,4 +15,5 @@
      {!!Form::text('estatura',null,['id'=>'estatura','class'=>'form-control','placeholder'=>'Ingrese Estatura'])!!}
       {!!Form::label('','Descripcion:')!!}
      {!!Form::textarea('descripcion0',null,['id'=>'descripcion','class'=>'form-control','placeholder'=>'Ingrese Descripcion'])!!}
+     
 </div>

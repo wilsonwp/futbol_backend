@@ -13,7 +13,11 @@ class Partido extends Model
         return $this->belongsTo('futboleros\Jornada');
     }
     function campeonato(){
-        return $this->belongsTo('futboleros\Campeonato');
+        return $this->belongsTo('\futboleros\Campeonato');
     }
+    public function equipos(){
+        return $this->belongsToMany('futboleros\Equipo');
+    }
+    
     
 }

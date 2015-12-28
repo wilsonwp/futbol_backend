@@ -31,7 +31,7 @@ class EquiposController extends Controller
 
     public function create()
     {
-      $campeonatos = Campeonato::lists('nombre','id');
+      $campeonatos = Campeonato::lists('nombre_campeonato','id');
       $tecnicos = Tecnico::lists('nombre','id');
       $estadios = Estadio::lists('nombre','id');
       return view('equipos.create',['campeonatos'=>$campeonatos,'tecnicos'=>$tecnicos,'estadios'=>$estadios]);
@@ -52,7 +52,7 @@ class EquiposController extends Controller
 
     public function edit($id)
     {
-      $campeonatos = Campeonato::lists('nombre','id');
+      $campeonatos = Campeonato::lists('nombre_campeonato','id');
       $tecnicos = Tecnico::lists('nombre','id');
       $estadios = Estadio::lists('nombre','id');
       return view('equipos.edit',['campeonatos'=>$campeonatos,'tecnicos'=>$tecnicos,'estadios'=>$estadios,'equipo'=>$this->equipo]);

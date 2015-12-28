@@ -7,6 +7,7 @@ $('#registro').click(
          var peso = $('#peso').val();
          var estatura = $('#estatura').val();
          var descripcion = $('#descripcion').val();
+         
          var equipo_id = $('#equipo_id').val();
          var route = 'http://localhost:8000/jugadores';
          var token = $('#token').val();

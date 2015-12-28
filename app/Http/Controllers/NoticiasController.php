@@ -5,7 +5,13 @@ namespace futboleros\Http\Controllers;
 use Illuminate\Http\Request;
 
 use futboleros\Http\Requests;
+use futboleros\Http\Requests\NoticiasRequest;
 use futboleros\Http\Controllers\Controller;
+use futboleros\Noticia;
+use Redirect;
+use Session;
+use Auth;
+use DB;
 
 class NoticiasController extends Controller
 {
@@ -16,7 +22,8 @@ class NoticiasController extends Controller
      */
     public function index()
     {
-        return view('noticias.index');
+        $noticias = Noticia::all();
+        return view('noticias.index',array('noticias'=>$noticias));
     }
 
     /**
@@ -35,9 +42,11 @@ class NoticiasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(NoticiasRequest $request)
     {
-        //
+        Noticia::create($request->all());
+        Session::flash('message','Noticia Publicada con Exito');
+        Redirect::to('noticias');
     }
 
     /**
@@ -83,5 +92,13 @@ class NoticiasController extends Controller
     public function destroy($id)
     {
         //
+    }
+     public function listing(){
+        $noticias = DB::table('noticias')
+            ->join('users', 'users.id', '=','noticias.user_id' )
+            ->get();
+        return response()->json(
+                $noticias
+                );
     }
 }

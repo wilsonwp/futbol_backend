@@ -19,6 +19,7 @@ Route::resource('jornadas','JornadasController');
 Route::resource('partidos','PartidosController');
 Route::resource('jugadores','JugadoresController');
 Route::get('jugadoresList','JugadoresController@listing');
+Route::get('noticiasList','NoticiasController@listing');
 Route::get('jornadasList','JornadasController@listing');
 Route::resource('login','LoginController');
 Route::get('logout','LoginController@logout');
@@ -33,6 +34,6 @@ Route::get('select_equipos/{id}','PartidosController@get_equipo');
 Route::get('select_estadio/{id}','PartidosController@get_estadio');
 Route::get('search_jugadores/{nombre}','JugadoresController@search_jugador');
 Route::resource('noticias','NoticiasController');
-Route::group(array('middleware' => 'auth'), function(){
+Route::group(array('middleware' => ''), function(){
     Route::controller('filemanager', 'FilemanagerLaravelController');
 });

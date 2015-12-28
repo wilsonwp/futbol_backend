@@ -18,7 +18,7 @@
                 @foreach ($equipos as $equipo)
                 <tbody>
 			<td>{{$equipo->nombre}}</td>
-                        <td>{{$equipo->campeonato->nombre}}</td>
+                        <td>{{$equipo->campeonato->nombre_campeonato}}</td>
 			<td>{{$equipo->alias}}</td>
                         <td>{{$equipo->fecha_fundacion}}</td>
                         <td>{{$equipo->presidente_actual}}</td>
