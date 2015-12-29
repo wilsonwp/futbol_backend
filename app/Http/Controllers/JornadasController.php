@@ -28,7 +28,7 @@ class JornadasController extends Controller
 
     public function create()
     {
-      $campeonatos = Campeonato::lists('nombre','id');
+      $campeonatos = Campeonato::lists('nombre_campeonato','id');
       return view('jornadas.create',compact('campeonatos'));
     }
 

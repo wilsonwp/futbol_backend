@@ -53,6 +53,9 @@ class User extends Model implements AuthenticatableContract,
     function noticias(){
         return $this->hasMany('\futboleros\Noticia');
     }
+    function comentarios(){
+        return $this->hasMany('\futboleros\Comentario');
+    }
     function asignarValorPassword($valor){
         if(!empty($valor)){
             $this->attributes['password'] = \Hash::make($valor);

@@ -16,32 +16,79 @@ function cargar(){
     
 }
 function mostrar(btn){
-    var route = 'http://localhost:8000/jugadores/'+btn.value+'/edit';
+    var route = 'http://localhost:8000/partidos/'+btn.value+'/edit';
+    
     $.get(route,function(res){
-        $("#nombre") .val(res.nombre);
-        $("#alias") .val(res.alias);
-        $("#fecha_nacimiento") .val(res.fecha_nac);
-        $("#nacionalidad") .val(res.nacionalidad);
-        $("#peso") .val(res.peso);
-        $("#estatura") .val(res.estatura);
-        $("#descripcion") .val(res.descripcion);
+        $("#estatus").val(res.estatus_partido);
         $("#id").val(res.id);
         
         
         
     });
+    comentarios(btn);
+    
     
 }
+function comentarios(btn){
+    var route2 = 'http://localhost:8000/comentarios/'+btn.value+'';
+    $.get(route2,function(res){
+        var contenido = $("#contenido");
+        for( i =0; i < res.length; i++){
+            contenido.append("<tr><td>"+res[i].contenido+"</td><td>"+res[i].created_at+"</td></tr>");
+        }
+        
+        
+        
+    });
+}
+function comentarios_new(id){
+    var route2 = 'http://localhost:8000/comentarios/'+id+'';
+        $("#contenido").val("");
+    $.get(route2,function(res){
+        var contenido = $("#contenido");
+        for( i =0; i < res.length; i++){
+            contenido.append("<tr><td>"+res[i].contenido+"</td><td>"+res[i].created_at+"</td></tr>");
+        }
+        
+        
+        
+    });
+}
+$("#agregar").click(function(){
+    contenido = $("#comentario").val();
+    user_id = $("#user_id").val();
+    partido_id = $("#id").val();
+    var route = 'http://localhost:8000/comentarios';
+    var token = $('#token').val();
+    
+    $.ajax({
+             url: route,
+             headers: {'X-CSRF-TOKEN': token},
+             type: 'POST',
+             dataType: 'json',
+             data: {
+                 contenido: contenido,
+                 user_id: user_id,
+                 partido_id: partido_id,
+                },
+             success: function(){
+                 $('#comentario').val('');
+                 comentarios_new(partido_id);
+             },
+            error: function(msj){
+               console.log(msj.responseJSON.nombre);
+               $("#msj").html(msj.responseJSON.nombre);
+               $("#msj-error").fadeIn();
+               
+            }
+         });
+    
+     
+});
 $("#actualizar").click(function(){
     var id = $("#id").val();
-    var nombre = $("#nombre").val();
-    var alias = $("#alias").val();
-    var equipo_id = $("#equipo_id").val();
-    var descripcion = $("#descripcion").val();
-    var estatura  = $("#estatura").val();
-    var peso = $("#peso").val();
-    var nacionalidad = $("#nacionalidad").val();
-    route =  "http://localhost:8000/jugadores/"+id+"";
+    var estatus_partido = $("#estatus").val();
+    route =  "http://localhost:8000/partidos/"+id+"";
     token = $("#token").val();
     
      $.ajax({
@@ -50,13 +97,8 @@ $("#actualizar").click(function(){
              type: 'PUT',
              dataType: 'json',
              data: {
-                 nombre: nombre,
-                 alias: alias,
-                 equipo_id: equipo_id,
-                 descripcion: descripcion,
-                 estatura: estatura,
-                 peso: peso,
-                 nacionalidad: nacionalidad
+                 id: id,
+     estatus_partido:estatus_partido
                  
                 },
              success: function(){
@@ -67,22 +109,5 @@ $("#actualizar").click(function(){
              }
          });
      
-});
-function eliminar(btn){  
-    route =  "http://localhost:8000/jugadores/"+btn.value;
-    token = $("#token").val();
-     $.ajax({
-             url: route,
-             headers: {'X-CSRF-TOKEN': token},
-             type: 'DELETE',
-             dataType: 'json',
-             success: function(){
-                 cargar();
-                  $('#msj-success').fadeIn();
-                 
-             }
-         });
-    
-}
-        
+});     
        

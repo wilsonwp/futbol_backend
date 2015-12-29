@@ -14,7 +14,7 @@
                 <tbody>
 			<td>{{$jornada->numero}}</td>
 			<td>{{$jornada->fecha}}</td>
-                        <td>{{$jornada->campeonato->nombre}}</td>
+                        <td>{{$jornada->campeonato->nombre_campeonato}}</td>
                         <td>{!! link_to_route('jornadas.edit', $title = 'editar', $parameters = $jornada->id, $attributes = ['class'=>'btn btn-primary']);!!}</td>                       
                         
 		</tbody>

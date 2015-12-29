@@ -5,7 +5,6 @@
 @include('alerts.ajax-success')
 {!!Form::open(['route'=>'noticias.store', 'method'=>'POST'])!!}
 <input type="hidden" name="_token" value="{{csrf_token()}}" id="token">
-
     @include('noticias.forms.camp')
 {!!Form::submit('Publicar',['class'=>'btn btn-primary'])!!}
 {!!Form::close()!!}

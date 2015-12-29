@@ -19,6 +19,15 @@ use Redirect;
 use DB;
 class PartidosController extends Controller
 {
+    
+    
+    public function __construct(){
+        $this->middleware('auth');
+        $this->beforeFilter('@find',['only' => ['edit','update','destroy']]);
+    }
+   public function find(Route $route){
+       $this->partido = Partido::find($route->getParameter('partidos'));
+   }
     /**
      * Display a listing of the resource.
      *
@@ -85,6 +94,13 @@ class PartidosController extends Controller
             
        
     }
+    public function get_comentarios($partido){
+        $partido = Partido::find($partido);
+        //dd($partido->comentarios);
+        return response()->json(
+                $partido->comentarios->toArray()
+                );
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -130,11 +146,12 @@ class PartidosController extends Controller
      */
     public function edit($id)
     {
-      $partido = Partido::find($id);
-      $campeonatos = Campeonato::lists('nombre','id');
-      $jornadas = Jornada::lists('numero','id');
-      return view('partidos.edit',['campeonatos'=>$campeonatos,'jornadas'=>$jornadas,'partido'=>$partido]);
-        //
+           return response()->json(
+                $this->partido->toArray()
+                );
+  
+        
+      
     }
 
     /**
@@ -145,13 +162,14 @@ class PartidosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
+    {   
         $partido = Partido::find($id);
         $partido->fill($request->all());
         $partido->save();
-        Session::flash('message','Partido actualizado con Exito');
-        return Redirect::to('/partidos');
-        //
+        return response()->json([
+            
+            'mensaje'=>'Actualizado con Exito'
+        ]);
     }
 
     /**

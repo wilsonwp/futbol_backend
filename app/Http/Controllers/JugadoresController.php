@@ -38,7 +38,7 @@ class JugadoresController extends Controller
      */
     public function create()
     {
-     $equipos = Equipo::lists('nombre','id');
+     $equipos = Equipo::lists('nombre_equipo','id');
      return view('jugadores.create',['equipos'=>$equipos]);
     }
 
