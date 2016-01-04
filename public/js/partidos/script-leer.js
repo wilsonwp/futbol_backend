@@ -29,6 +29,20 @@ function mostrar(btn){
     
     
 }
+function mostrar2(btn){
+    var route = 'http://localhost:8000/partidos/'+btn.value+'/edit';
+    
+    $.get(route,function(res){
+        $("#estatus").val(res.estatus_partido);
+        $("#id").val(res.id);
+        
+        
+        
+    });
+    comentarios(btn);
+    
+    
+}
 function comentarios(btn){
     var route2 = 'http://localhost:8000/comentarios/'+btn.value+'';
     $.get(route2,function(res){
@@ -88,6 +102,7 @@ $("#agregar").click(function(){
 $("#actualizar").click(function(){
     var id = $("#id").val();
     var estatus_partido = $("#estatus").val();
+    
     route =  "http://localhost:8000/partidos/"+id+"";
     token = $("#token").val();
     
@@ -97,14 +112,13 @@ $("#actualizar").click(function(){
              type: 'PUT',
              dataType: 'json',
              data: {
-                 id: id,
      estatus_partido:estatus_partido
                  
                 },
              success: function(){
-                 cargar();
                  $("#myModal").modal('toggle');
-                  $('#msj-success').fadeIn();
+                 location.reload();
+                 $('#msj-success').fadeIn();
                  
              }
          });
