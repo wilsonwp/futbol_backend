@@ -9,14 +9,13 @@ use futboleros\Http\Controllers\Controller;
 
 class ComentariosController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    function __construct(){
+        $this->middleware('cors');
+    } 
     public function index()
     {
-        //
+     $comentarios = Comentario::all();
+     return response()->json($comentarios->toArray());
     }
 
     /**
@@ -38,13 +37,12 @@ class ComentariosController extends Controller
     public function store(Request $request)
     {
        
-       if($request->ajax()){
+    
            Comentario::create($request->all());
            return response()->json([
                
                "mensaje"=>"Jugador Creado con Exito"
            ]);
-       }
     }
 
     /**
