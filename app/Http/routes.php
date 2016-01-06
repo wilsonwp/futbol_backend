@@ -33,6 +33,8 @@ Route::get('select_jornadas/{id}','PartidosController@get_jornada');
 Route::get('select_equipos/{id}','PartidosController@get_equipo');
 Route::get('select_estadio/{id}','PartidosController@get_estadio');
 Route::get('select_estatus/{id}','PartidosController@get_estatus');
+Route::get('partidos_live','PartidosController@partidos_live');
+Route::get('partidos_live_visitante','PartidosController@partidos_live_visitante');
 Route::get('search_jugadores/{nombre}','JugadoresController@search_jugador');
 Route::get('comentarios/{partido}','PartidosController@get_comentarios');
 Route::resource('noticias','NoticiasController');

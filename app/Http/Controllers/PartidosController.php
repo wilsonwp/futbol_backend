@@ -22,7 +22,8 @@ class PartidosController extends Controller
     
     
     public function __construct(){
-        $this->middleware('auth');
+        $this->middleware('cors');
+        //$this->middleware('auth');
         $this->beforeFilter('@find',['only' => ['edit','update','destroy']]);
     }
    public function find(Route $route){
@@ -48,6 +49,27 @@ class PartidosController extends Controller
        $partidos = Partido::all();
      // dd($partidos);
       return view('partidos.index', ['partidos' => $partidos]);
+      
+      
+    }
+    public function partidos_live()
+    {
+      $partidos= Partido::with('equipos')
+              ->where('partidos.estatus_partido',1)
+              ->get();
+        return  response()->json($partidos->toArray()) ;
+      
+      
+    }
+    public function partidos_live_local()
+    {
+     $partidos= DB::table('partidos')
+            ->where(['estatus_partido'=>1])
+            ->join('campeonatos', 'partidos.campeonato_id', '=','campeonatos.id' )
+            ->groupBy('partidos.id')
+            ->get()
+              ;
+        return  response()->json($partidos);
       
       
     }
@@ -115,12 +137,14 @@ class PartidosController extends Controller
          $detalle_partido1 = new EquipoPartido;
          $detalle_partido1->create([
         'partido_id'=>$id_partido->id,
-         'equipo_id' => $request['equipo_local']
+         'equipo_id' => $request['equipo_local'],
+         'calidad' => 0
             ]);
          $detalle_partido2 = new EquipoPartido;
          $detalle_partido2->create([
         'partido_id'=>$id_partido->id,
-         'equipo_id' => $request['equipo_visitante']
+         'equipo_id' => $request['equipo_visitante'],
+         'calidad' => 1
             ]);
        
         Session::flash('message','Partido Creado con Exito');

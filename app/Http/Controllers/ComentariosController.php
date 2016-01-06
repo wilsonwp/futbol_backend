@@ -12,9 +12,11 @@ class ComentariosController extends Controller
     function __construct(){
         $this->middleware('cors');
     } 
-    public function index()
+    public function index($id)
     {
-     $comentarios = Comentario::all();
+     $comentarios = Comentario::where('partido_id',$id)
+             ->get()
+             ;
      return response()->json($comentarios->toArray());
     }
 
