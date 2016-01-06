@@ -30,38 +30,30 @@ function mostrar(btn){
     
 }
 function mostrar2(btn){
-    var route = 'http://localhost:8000/partidos/'+btn.value+'/edit';
-    
-    $.get(route,function(res){
-        $("#estatus").val(res.estatus_partido);
-        $("#id").val(res.id);
-        
-        
-        
-    });
-    comentarios(btn);
-    
-    
-}
-function comentarios(btn){
-    var route2 = 'http://localhost:8000/comentarios/'+btn.value+'';
-    $.get(route2,function(res){
+    var route = 'http://localhost:8000/comentarios/'+btn.value;
+    console.log(btn.value);
+  // $("#contenido").remove();
+      $.get(route,function(res){
         var contenido = $("#contenido");
         for( i =0; i < res.length; i++){
-            contenido.append("<tr><td>"+res[i].contenido+"</td><td>"+res[i].created_at+"</td></tr>");
+             contenido.append("<tr><td>Min. "+res[i].minuto+"</td><td>"+res[i].titulo+"</td><td>"+res[i].contenido+"</td><td>"+res[i].created_at+"</td></tr>");
         }
         
         
         
     });
+    
+    
+    
 }
 function comentarios_new(id){
     var route2 = 'http://localhost:8000/comentarios/'+id+'';
         $("#contenido").val("");
+        $("#titulo").val("");
     $.get(route2,function(res){
         var contenido = $("#contenido");
         for( i =0; i < res.length; i++){
-            contenido.append("<tr><td>"+res[i].contenido+"</td><td>"+res[i].created_at+"</td></tr>");
+            contenido.append("<tr><td>Min. "+res[i].minuto+"</td><td>"+res[i].titulo+"</td><td>"+res[i].contenido+"</td><td>"+res[i].created_at+"</td></tr>");
         }
         
         
@@ -70,6 +62,9 @@ function comentarios_new(id){
 }
 $("#agregar").click(function(){
     contenido = $("#comentario").val();
+    titulo = $("#titulo").val();
+    minuto = $("#minuto").val();
+    tipo_comentario_id = $("#tipo_comentario_id").val();
     user_id = $("#user_id").val();
     partido_id = $("#id").val();
     var route = 'http://localhost:8000/comentarios';
@@ -81,12 +76,17 @@ $("#agregar").click(function(){
              type: 'POST',
              dataType: 'json',
              data: {
+                 tipo_comentario_id: tipo_comentario_id,
+                 titulo:titulo,
                  contenido: contenido,
                  user_id: user_id,
                  partido_id: partido_id,
+                 minuto:minuto
                 },
              success: function(){
                  $('#comentario').val('');
+                 $('#titulo').val('');
+                  $('#minuto').val('');
                  comentarios_new(partido_id);
              },
             error: function(msj){
