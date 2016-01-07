@@ -32,6 +32,32 @@
                                 </li>
                             </ul>
                         </li>
+                        <li>
+                            <a href="#"><i class="fa fa-film fa-fw"></i>Tecnicos<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                 <li>
+                                    <a href="{!!URL::to('/tecnicos')!!}"><i class='fa fa-plus fa-fw'></i>Listado</a>
+                                </li>
+                                <li>
+                                    <a href="{!!URL::to('/tecnicos/asignar')!!}"><i class='fa fa-plus fa-fw'></i>Asignar Equipo</a>
+                                </li>
+                                <li>
+                                    <a href="{!!URL::to('/equipos/create')!!}"><i class='fa fa-plus fa-fw'></i> Agregar</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-film fa-fw"></i>Arbitros<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                 <li>
+                                    <a href="{!!URL::to('/arbitros')!!}"><i class='fa fa-plus fa-fw'></i>Listado</a>
+                                </li>
+                                <li>
+                                    <a href="{!!URL::to('/arbitros/create')!!}"><i class='fa fa-plus fa-fw'></i> Agregar</a>
+                                </li>
+                            </ul>
+                        </li>
+                        
                          <li>
                             <a href="#"><i class="fa fa-film fa-fw"></i>Partidos<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -80,6 +106,17 @@
                                 </li>
                                 <li>
                                     <a href="{!!URL::to('/noticias/create')!!}"><i class='fa fa-plus fa-fw'></i> Nueva Noticia</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-film fa-fw"></i>Sistema<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                 <li>
+                                    <a href="{!!URL::to('/logs')!!}"><i class='fa fa-plus fa-fw'></i>Logs del Sistema</a>
+                                </li>
+                                <li>
+                                    <a href="{!!URL::to('')!!}"><i class='fa fa-plus fa-fw'></i> Nueva Noticia</a>
                                 </li>
                             </ul>
                         </li>

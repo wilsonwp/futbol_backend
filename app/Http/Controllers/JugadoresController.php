@@ -9,6 +9,7 @@ use Illuminate\Routing\Route;
 use futboleros\Jugador;
 use futboleros\Equipo;
 use DB;
+use futboleros\Log;
 class JugadoresController extends Controller
 {
    public function __construct(){

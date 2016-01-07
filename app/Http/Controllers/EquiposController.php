@@ -10,6 +10,7 @@ use Redirect;
 use futboleros\Http\Requests;
 use futboleros\Http\Controllers\Controller;
 use Illuminate\Routing\Route;
+use futboleros\Log;
 
 class EquiposController extends Controller
 {

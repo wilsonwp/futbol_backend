@@ -12,7 +12,7 @@
 		</thead>
                 @foreach ($jornadas as $jornada)
                 <tbody>
-			<td>{{$jornada->numero}}</td>
+			<td>No. {{$jornada->numero}}</td>
 			<td>{{$jornada->fecha}}</td>
                         <td>{{$jornada->campeonato->nombre_campeonato}}</td>
                         <td>{!! link_to_route('jornadas.edit', $title = 'editar', $parameters = $jornada->id, $attributes = ['class'=>'btn btn-primary']);!!}</td>                       

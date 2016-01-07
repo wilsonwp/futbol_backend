@@ -3,15 +3,11 @@
 namespace futboleros\Http\Controllers;
 
 use Illuminate\Http\Request;
-use futboleros\Http\Requests\LoginRequest;
+
 use futboleros\Http\Requests;
 use futboleros\Http\Controllers\Controller;
-use Auth;
-use Session;
-use Redirect;
 use futboleros\Log;
-
-class LoginController extends Controller
+class TecnicosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -39,21 +35,9 @@ class LoginController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(LoginRequest $request)
+    public function store(Request $request)
     {
-        if(Auth::attempt(['email'=>$request['email'],'password'=>$request['password']])){
-            if(Auth::user()->estatus == 0){
-            Session::flash('message','Como Primer Acceso al sistema debe cambiar su Password');
-            return Redirect::to('perfiles');    
-            }else{
-            Session::flash('message','Bienvenido al Backend');
-            return Redirect::to('admin');  
-            }
-            
-        }else{
-            Session::flash('message-error','Datos Incorrectos');
-            return Redirect::to('/');
-        }
+        //
     }
 
     /**
@@ -99,10 +83,5 @@ class LoginController extends Controller
     public function destroy($id)
     {
         //
-    }
-    public function logout(){
-        Auth::logout();
-        Session::flash('message','Usted Ha Cerrado Sesión');
-        return Redirect::to('/');
     }
 }

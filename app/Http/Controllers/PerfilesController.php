@@ -11,6 +11,7 @@ use Redirect;
 use futboleros\User;
 use futboleros\Http\Requests\UserUpdateRequest;
 use futboleros\CategoriaUser;
+use futboleros\Log;
 class PerfilesController extends Controller
 {
     /**

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tecnico extends Model
 {
+    protected $fillable = ['nombre','alias','nacionalidad'];
      
 //***** Relaciones entre las Clases****//
     //Un Tecnico Pertenece a un Equipo

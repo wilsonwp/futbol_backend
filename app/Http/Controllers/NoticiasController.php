@@ -12,6 +12,7 @@ use Redirect;
 use Session;
 use Auth;
 use DB;
+use futboleros\Log;
 
 class NoticiasController extends Controller
 {

@@ -17,6 +17,8 @@ use Auth;
 use Session;
 use Redirect;
 use DB;
+use futboleros\Log;
+
 class PartidosController extends Controller
 {
     

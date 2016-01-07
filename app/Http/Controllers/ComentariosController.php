@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use futboleros\Comentario;
 use futboleros\Http\Requests;
 use futboleros\Http\Controllers\Controller;
+use futboleros\Log;
 
 class ComentariosController extends Controller
 {

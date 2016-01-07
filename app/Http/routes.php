@@ -38,6 +38,8 @@ Route::get('partidos_live_visitante','PartidosController@partidos_live_visitante
 Route::get('search_jugadores/{nombre}','JugadoresController@search_jugador');
 Route::get('comentarios/{partido}','PartidosController@get_comentarios');
 Route::resource('noticias','NoticiasController');
+Route::resource('arbitros','ArbitrosController');
+Route::resource('tecnicos','TecnicosController');
 Route::resource('comentarios','ComentariosController');
 Route::group(array('middleware' => ''), function(){
     Route::controller('filemanager', 'FilemanagerLaravelController');

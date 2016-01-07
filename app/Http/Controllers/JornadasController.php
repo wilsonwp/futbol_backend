@@ -9,6 +9,7 @@ use \futboleros\Campeonato;
 use Redirect;
 use Session;
 use Illuminate\Routing\Route;
+use futboleros\Log;
 class JornadasController extends Controller
 {
     public function __construct(){
@@ -33,15 +34,23 @@ class JornadasController extends Controller
     }
 
     public function store(Request $request)
-    {
+    {       
+          $validacion = Jornada::where(['numero'=>$request['numero'],'campeonato_id'=>$request['campeonato_id']])->count();
+          if($validacion > 0){
+            Session::flash('message','Esa Jornada ya Fue Creada');
+            return Redirect::to('/jornadas/create');
+          }else{
           Jornada::create([
             'numero' =>$request['numero'],
             'show'=> 'Fecha No.'.$request['numero'],
             'fecha' =>$request['fecha'],
             'campeonato_id' =>$request['campeonato_id']
-        ]);
+                            ]);  
         Session::flash('message','Jornada Creada con Exito');
         return Redirect::to('/jornadas');
+          }
+          
+        
         //
     }
      // Devolver lista de Jornadas Json

@@ -13,6 +13,7 @@ use Session;
 use Redirect;
 use Mail;
 use Illuminate\Routing\Route;
+use futboleros\Log;
 
 class UserController extends Controller
 {
