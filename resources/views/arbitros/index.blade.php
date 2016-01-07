@@ -13,14 +13,12 @@
                         
 		</thead>
                 <input type="hidden" name="_token" value="{{csrf_token()}}" id="token">
-                @foreach($campeonatos as $campeonato)
+                @foreach($tecnicos as $tecnico)
 			<tbody>
-				<td>{{$campeonato->nombre_campeonato}}</td>
-                                <td>{{$campeonato->alias}}</td>
-				<td>{{$campeonato->num_partidos}}</td>
-                                <td>{{$campeonato->fecha_inic}}</td>
-                                <td>{{$campeonato->fecha_fin}}</td>
-                                <td>{!! link_to_route('campeonatos.edit', $title = 'editar', $parameters = $campeonato->id, $attributes = ['class'=>'btn btn-primary']);!!}</td>
+				<td>{{$tecnico->nombre}}</td>
+                                <td>{{$tecnico->alias}}</td>
+                                <td>{{$tecnico->nacionalidad}}</td>
+                                <td>{!! link_to_route('tecnicos.edit', $title = 'editar', $parameters = $tecnico->id, $attributes = ['class'=>'btn btn-primary']);!!}</td>
                                 
                                 
 			</tbody>
@@ -31,5 +29,5 @@
 	
 	
 	</table>
-        {!!$campeonatos->render()!!}
+        {!!$tecnicos->render()!!}
 	@endsection

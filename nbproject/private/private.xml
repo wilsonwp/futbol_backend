@@ -3,10 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/wp_project/app/Http/Kernel.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/config/app.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/composer.json</file>
-            <file>file:/C:/xampp/htdocs/wp_project/config/cors.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Http/Controllers/CampeonatosController.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Http/Controllers/NoticiasController.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Http/Controllers/JornadasController.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Http/routes.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/storage/logs/laravel-2015-12-29.log</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Http/Controllers/JugadoresController.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Http/Controllers/PartidosController.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Http/Controllers/TecnicosController.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Http/Controllers/ArbitrosController.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/menus/administrador.blade.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/layouts/admin.blade.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Http/Controllers/PerfilesController.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Http/Controllers/LoginController.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Http/Controllers/EquiposController.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Http/Controllers/UserController.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/arbitros/index.blade.php</file>
             <file>file:/C:/xampp/htdocs/wp_project/app/Http/Controllers/ComentariosController.php</file>
         </group>
     </open-files>

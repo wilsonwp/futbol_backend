@@ -7,16 +7,25 @@ use Illuminate\Http\Request;
 use futboleros\Http\Requests;
 use futboleros\Http\Controllers\Controller;
 use futboleros\Log;
+use Illuminate\Routing\Route;
+use futboleros\Tecnico;
 class TecnicosController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function __construct(){
+        $this->middleware('auth');
+        $this->beforeFilter('@find',['only' => ['edit','update','destroy']]);
+    }
+     //este metodo busca los parametros que usan los metodos edit, update y destroy
+    public function find(Route $route){
+        $this->tecnico = Tecnico::find($route->getParameter('tecnicos'));
+   
+    }
+    
     public function index()
     {
-        //
+        $tecnicos = Tecnico::paginate(10);
+        return view('tecnicos.index',['tecnicos'=>$tecnicos]);
+        
     }
 
     /**
@@ -26,7 +35,7 @@ class TecnicosController extends Controller
      */
     public function create()
     {
-        //
+        return view('tecnicos.create');
     }
 
     /**
@@ -37,7 +46,9 @@ class TecnicosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Tecnico:create($request->all());
+        Session::flash('message','Tecnico Creado con Exito');
+        Redirect::to('tecnicos');
     }
 
     /**
@@ -59,6 +70,7 @@ class TecnicosController extends Controller
      */
     public function edit($id)
     {
+       return view('tecnicos.edit',['tecnico'=>$this->tecnico]);
         //
     }
 

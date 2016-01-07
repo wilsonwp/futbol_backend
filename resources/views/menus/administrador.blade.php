@@ -42,7 +42,7 @@
                                     <a href="{!!URL::to('/tecnicos/asignar')!!}"><i class='fa fa-plus fa-fw'></i>Asignar Equipo</a>
                                 </li>
                                 <li>
-                                    <a href="{!!URL::to('/equipos/create')!!}"><i class='fa fa-plus fa-fw'></i> Agregar</a>
+                                    <a href="{!!URL::to('/tecnicos/create')!!}"><i class='fa fa-plus fa-fw'></i> Agregar</a>
                                 </li>
                             </ul>
                         </li>
