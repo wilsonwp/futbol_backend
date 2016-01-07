@@ -10,7 +10,8 @@
         "laravelcollective/html": "5.1.*",
         "guzzlehttp/guzzle": "~4.0",
         "intervention/image": "2.*",
-        "barryvdh/laravel-cors":" 0.7.*"
+        "barryvdh/laravel-cors":" 0.7.*",
+        "barryvdh/laravel-debugbar": "^2.1"
     },
     "require-dev": {
         "pqb/filemanager-laravel": "2.*",

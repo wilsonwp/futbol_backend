@@ -3,22 +3,20 @@
 @include('alerts.message');
 	<table class="table">
 		<thead>
-			<th>Nombre del Campeonato</th>
+			<th>Nombre de Arbitro</th>
                         <th>Alias</th>
-			<th>No. de Partidos</th>
-			<th>Fecha Inicio</th>
-                        <th>Fecha Fin</th>
+			<th>Nacionalidad</th>
                         <th>Acciones</th>
                         <th></th>
                         
 		</thead>
                 <input type="hidden" name="_token" value="{{csrf_token()}}" id="token">
-                @foreach($tecnicos as $tecnico)
+                @foreach($arbitros as $arbitro)
 			<tbody>
-				<td>{{$tecnico->nombre}}</td>
-                                <td>{{$tecnico->alias}}</td>
-                                <td>{{$tecnico->nacionalidad}}</td>
-                                <td>{!! link_to_route('tecnicos.edit', $title = 'editar', $parameters = $tecnico->id, $attributes = ['class'=>'btn btn-primary']);!!}</td>
+				<td>{{$arbitro->nombre}}</td>
+                                <td>{{$arbitro->alias}}</td>
+                                <td>{{$arbitro->nacionalidad}}</td>
+                                <td>{!! link_to_route('arbitros.edit', $title = 'editar', $parameters = $arbitro->id, $attributes = ['class'=>'btn btn-primary']);!!}</td>
                                 
                                 
 			</tbody>
@@ -29,5 +27,5 @@
 	
 	
 	</table>
-        {!!$tecnicos->render()!!}
+        {!!$arbitros->render()!!}
 	@endsection

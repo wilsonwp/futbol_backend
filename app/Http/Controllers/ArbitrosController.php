@@ -3,32 +3,34 @@
 namespace futboleros\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use futboleros\Http\Requests;
 use futboleros\Http\Controllers\Controller;
+use futboleros\Log;
+use Illuminate\Routing\Route;
 use futboleros\Arbitro;
+use Session;
+use Redirect;
 class ArbitrosController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function __construct(){
+        $this->middleware('auth');
+        $this->beforeFilter('@find',['only' => ['edit','update','destroy']]);
+    }
+     //este metodo busca los parametros que usan los metodos edit, update y destroy
+    public function find(Route $route){
+        $this->arbitro = Arbitro::find($route->getParameter('arbitros'));
+   
+    }
+    
     public function index()
     {
-        $arbitros = Arbitro::all();
-        return view('arbitros/index',['arbitros'=>$arbitros]);
-       
+        $arbitros = Arbitro::paginate(10);
+        return view('arbitros.index',['arbitros'=>$arbitros]);
+        
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('arbitros.create');
     }
 
     /**
@@ -39,15 +41,11 @@ class ArbitrosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Arbitro::create($request->all());
+        Session::flash('message','Arbitro Creado con Exito');
+        return Redirect::to('arbitros');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
@@ -61,6 +59,7 @@ class ArbitrosController extends Controller
      */
     public function edit($id)
     {
+       return view('arbitros.edit',['arbitro'=>$this->arbitro]);
         //
     }
 
@@ -71,19 +70,19 @@ class ArbitrosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id, Request $request)
     {
-        //
+        $this->arbitro->fill($request->all());
+        //dd($campeonato);
+        $this->arbitro->save();
+        Session::flash('message','Datos de Tecnico Actualizado con Exito');
+        return Redirect::to('/arbitros');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        Arbitro::destroy($id);
+        Session::flash('message','Arbitro Eliminado');
+        return Redirect::to('/arbitros');
+        
     }
 }

@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 	@section('content')
-	{!!Form::model($campeonato,['route'=>['tecnicos.update',$tecnico->id],'method'=>'PUT'])!!}
+	{!!Form::model($tecnico,['route'=>['tecnicos.update',$tecnico->id],'method'=>'PUT'])!!}
 	@include('tecnicos.forms.camp')
 	{!!Form::submit('Editar',['class'=>'btn btn-primary'])!!}
 	{!!Form::close()!!}

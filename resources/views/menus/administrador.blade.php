@@ -9,6 +9,18 @@
                                 </li>
                             </ul>
                         </li>
+                         <li>
+                            <a href="#"><i class="fa fa-users fa-fw"></i> Copas <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="{!!URL::to('/copas/create')!!}"><i class='fa fa-plus fa-fw'></i>Nueva Copa</a>
+                                </li>
+                                <li>
+                                    <a href="{!!URL::to('/copas/')!!}"><i class='fa fa-plus fa-fw'></i>Listado de Copas</a>
+                                </li>
+                            </ul>
+                        </li>
+                       
                        
                         <li>
                             <a href=""><i class="fa fa-film fa-fw"></i> Jornadas<span class="fa arrow"></span></a>

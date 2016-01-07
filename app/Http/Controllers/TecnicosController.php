@@ -9,6 +9,8 @@ use futboleros\Http\Controllers\Controller;
 use futboleros\Log;
 use Illuminate\Routing\Route;
 use futboleros\Tecnico;
+use Session;
+use Redirect;
 class TecnicosController extends Controller
 {
     public function __construct(){
@@ -81,19 +83,19 @@ class TecnicosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id, Request $request)
     {
-        //
+        $this->tecnico->fill($request->all());
+        //dd($campeonato);
+        $this->tecnico->save();
+        Session::flash('message','Datos de Tecnico Actualizado con Exito');
+        return Redirect::to('/tecnicos');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        Tecnico::destroy($id);
+        Session::flash('message','Tecnico Eliminado');
+        return Redirect::to('/tecnicos');
+        
     }
 }

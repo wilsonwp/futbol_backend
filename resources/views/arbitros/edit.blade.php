@@ -1,12 +1,12 @@
 @extends('layouts.admin')
 	@section('content')
-	{!!Form::model($campeonato,['route'=>['campeonatos.update',$campeonato->id],'method'=>'PUT'])!!}
-	@include('campeonatos.forms.camp')
+	{!!Form::model($arbitro,['route'=>['arbitros.update',$arbitro->id],'method'=>'PUT'])!!}
+	@include('arbitros.forms.camp')
 	{!!Form::submit('Editar',['class'=>'btn btn-primary'])!!}
 	{!!Form::close()!!}
         
         
-        {!!Form::open(['route'=>['campeonatos.destroy',$campeonato->id],'method'=>'DELETE'])!!}
+        {!!Form::open(['route'=>['arbitros.destroy',$arbitro->id],'method'=>'DELETE'])!!}
 	{!!Form::submit('Borrar',['class'=>'btn btn-danger'])!!}
 	{!!Form::close()!!}
 	@endsection
