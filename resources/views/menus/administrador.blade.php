@@ -1,22 +1,22 @@
                         <li>
-                            <a href="#"><i class="fa fa-film fa-fw"></i>Campeonatos<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-film fa-fw"></i>Campeonatos<span class=""></span></a>
                             <ul class="nav nav-second-level">
                                  <li>
-                                    <a href="{!!URL::to('/campeonatos')!!}"><i class='fa fa-plus fa-fw'></i>Listado</a>
+                                    <a href="{!!URL::to('/campeonatos')!!}">Listado</a>
                                 </li>
-                                <li>
-                                    <a href="/campeonatos/create"><i class='fa fa-plus fa-fw'></i> Agregar</a>
+                                <li class="">
+                                    <a href="/campeonatos/create"><i class=''></i> Agregar</a>
                                 </li>
                             </ul>
                         </li>
                          <li>
-                            <a href="#"><i class="fa fa-film fa-fw"></i>Jornadas<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-film fa-fw"></i>Jornadas<span class=""></span></a>
                             <ul class="nav nav-second-level">
                                  <li>
-                                    <a href="{!!URL::to('/jornadas')!!}"><i class='fa fa-plus fa-fw'></i>Listado</a>
+                                    <a href="{!!URL::to('/jornadas')!!}"><i class=''></i>Listado</a>
                                 </li>
                                 <li>
-                                    <a href="/jjornadas/create"><i class='fa fa-plus fa-fw'></i> Agregar</a>
+                                    <a href="/jornadas/create"><i class=''></i> Agregar</a>
                                 </li>
                             </ul>
                         </li>
@@ -26,9 +26,12 @@
                                  <li>
                                     <a href="{!!URL::to('/equipos')!!}"><i class='fa fa-plus fa-fw'></i>Listado</a>
                                 </li>
+               
                                 <li>
-                                    <a href="/equipos/create"><i class='fa fa-plus fa-fw'></i> Agregar</a>
-                                </li>
+                                    <a href="{!!URL::to('/equipos/create')!!}"><i class='fa fa-plus fa-fw'></i>Agregar</a>
+                                </li>    
+                         
+                                
                             </ul>
                         </li>
                          <li>
@@ -93,7 +96,7 @@
                                     <a href="{!!URL::to('/comentarios')!!}"><i class='fa fa-plus fa-fw'></i>Listado</a>
                                 </li>
                                 <li>
-                                    <a href="/jugadores/create"><i class='fa fa-plus fa-fw'></i> Agregar</a>
+                                    <a href="/sistema/create"><i class=''></i> Agregar</a>
                                 </li>
                             </ul>
                         </li>
