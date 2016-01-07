@@ -6,7 +6,7 @@
 						
 						<h2>Futboleros</h2>
 						<h4>Reseteo de Contraseña</h4>
-						
+                        						
 					</div>
 					<div class="col-sm-6">
 						{!!Form::open(['url'=>'/password/reset', 'method'=>'POST','role'=>'form'])!!}

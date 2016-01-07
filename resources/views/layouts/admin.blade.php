@@ -26,7 +26,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{!!URL::to('admin')!!}">El Hincha</a>
+                <a class="navbar-brand" href="{!!URL::to('admin')!!}"><img src="img/logo_admin.png" class="img_logo_admin" /> La Hinchada</a>
             </div>
            
 

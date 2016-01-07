@@ -24,6 +24,20 @@
 /* ---------------------------------------------------------------------- */
 /*	Custom styles
  /* ---------------------------------------------------------------------- */
+#loader
+{
+	height: 100%;
+	min-height: 100%;
+}
+.logo
+{
+	background: rgba(0, 0, 0, 0) url("../img/logo_hinchada.png") no-repeat scroll 0 0;
+    display: block;
+    width: 300px;
+    height: 300px;
+    margin: auto;
+}
+
 a{
 	text-decoration: none;
 	outline: none;
@@ -37,15 +51,27 @@ a:hover{
 	outline: none;
 }
 body{
-	background: #fff;
-	font-family: 'Raleway', sans-serif;
-	color: #8495a5;
+	background: #fff none repeat scroll 0 0;
+    color: #8495a5;
+    font-family: "Raleway",sans-serif;
+    height: 100% !important;
+    min-height: 100% !important;
+    position: fixed;
+    width: 100%;
+}
+.login_modal
+{
+	background: rgba(0,0, 0, .3);
 }
 footer {
-	background: #027bef;
-	color: #fff;
-	text-align: center;
-	padding: 15px;
+	background: #000 none repeat scroll 0 0;
+    bottom: 0;
+    color: #fff;
+    margin: auto 0;
+    padding: 15px;
+    position: fixed;
+    text-align: center;
+    width: 100%;
 }
 footer h6 {
 	color: #fff;
@@ -55,8 +81,21 @@ footer h6 {
 footer ul {
 	list-style: none;
 }
+
 footer ul li {
 	display: inline-block;
+}
+#dd_wp {
+    background: rgba(0, 0, 0, 0) url("http://dd-wp.com/wp-content/uploads/2015/11/copyright.png") no-repeat scroll 0 0;
+    display: block;
+    float: right;
+    height: 50px;
+    margin: -10px 0 0;
+    width: 150px !important;
+}
+.footer_left
+{
+	float: left;
 }
 h1,h2,h3,h4,h5,h6{
 	color: #46627e;
@@ -322,6 +361,7 @@ p{
 .slider{
 	background: url("../img/fondo.jpg");
 	padding: 100px 0 130px 0; 
+	height: 90%;
 }
 .slider h2, .slider h3,.slider h4 {
 	color: #fff;
