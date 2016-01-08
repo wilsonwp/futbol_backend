@@ -105,6 +105,7 @@ body {
 .sidebar .sidebar-nav.navbar-collapse {
     padding-right: 0;
     padding-left: 0;
+    background-color: #093f18;
 }
 
 .sidebar .sidebar-search {
@@ -134,6 +135,7 @@ body {
 }
 
 .sidebar .arrow {
+    font-family: fontawesome;
     float: right;
 }
 
@@ -266,6 +268,16 @@ body {
 .dataTables_wrapper {
     position: relative;
     clear: both;
+}
+table 
+{
+    margin-top: 15px;
+}
+
+table th
+{
+    background-color:#1b809e;
+    color:#fff;  
 }
 
 table.dataTable thead .sorting,

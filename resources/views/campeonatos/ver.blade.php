@@ -8,7 +8,7 @@
 </div>
 @endif
 	@section('content')
-	<table class="table">
+	<table class="table table-striped">
 		<thead>
 			<th>Nombre del Campeonato</th>
                         <th>Alias</th>
