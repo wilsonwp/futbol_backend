@@ -1,7 +1,8 @@
 @extends('layouts.admin')
 @section('content')
-@include('alerts.message');
-	<table class="table">
+@include('alerts.message')
+<div class="table-responsive">
+	<table class="table table-striped">
 		<thead>
 			<th>Nombre del Campeonato</th>
                         <th>Alias</th>
@@ -21,6 +22,7 @@
                                 <td>{{$campeonato->fecha_inic}}</td>
                                 <td>{{$campeonato->fecha_fin}}</td>
                                 <td>{!! link_to_route('campeonatos.edit', $title = 'editar', $parameters = $campeonato->id, $attributes = ['class'=>'btn btn-primary']);!!}</td>
+                                <td></td>
                                 
                                 
 			</tbody>
@@ -31,5 +33,6 @@
 	
 	
 	</table>
+</div>
         {!!$campeonatos->render()!!}
 	@endsection
