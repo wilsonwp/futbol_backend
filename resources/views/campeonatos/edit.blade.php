@@ -1,13 +1,19 @@
 @extends('layouts.admin')
 	@section('content')
-	{!!Form::model($campeonato,['route'=>['campeonatos.update',$campeonato->id],'method'=>'PUT'])!!}
-	@include('campeonatos.forms.camp')
-	{!!Form::submit('Editar',['class'=>'btn btn-primary'])!!}
-	{!!Form::close()!!}
-        
-        
-        {!!Form::open(['route'=>['campeonatos.destroy',$campeonato->id],'method'=>'DELETE'])!!}
-	{!!Form::submit('Borrar',['class'=>'btn btn-danger'])!!}
-	{!!Form::close()!!}
+	<div class="content_form">
+		{!!Form::model($campeonato,['route'=>['campeonatos.update',$campeonato->id],'method'=>'PUT', 'class'=>'form-horizontal'])!!}
+		@include('campeonatos.forms.camp')
+		<div class="col-sm-6">
+			{!!Form::submit('Editar',['class'=>'btn btn-primary btn-lg btn-block'])!!}
+		</div>
+		{!!Form::close()!!}
+		    
+		    
+		{!!Form::open(['route'=>['campeonatos.destroy',$campeonato->id],'method'=>'DELETE'])!!}
+		<div class="col-sm-6">
+			{!!Form::submit('Borrar',['class'=>'btn btn-danger btn-lg btn-block'])!!}
+		</div>
+		{!!Form::close()!!}
+	</div>
 	@endsection
   
