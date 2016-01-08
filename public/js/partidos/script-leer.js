@@ -31,8 +31,8 @@ function mostrar(btn){
 }
 function mostrar2(btn){
     var route = 'http://localhost:8000/comentarios/'+btn.value;
-    console.log(btn.value);
-  // $("#contenido").remove();
+    $("#id").val(btn.value);
+   $("#contenido").empty();
       $.get(route,function(res){
         var contenido = $("#contenido");
         for( i =0; i < res.length; i++){
@@ -50,7 +50,9 @@ function comentarios_new(id){
     var route2 = 'http://localhost:8000/comentarios/'+id+'';
         $("#contenido").val("");
         $("#titulo").val("");
+        $("#contenido").empty();
     $.get(route2,function(res){
+        console.log(res);
         var contenido = $("#contenido");
         for( i =0; i < res.length; i++){
             contenido.append("<tr><td>Min. "+res[i].minuto+"</td><td>"+res[i].titulo+"</td><td>"+res[i].contenido+"</td><td>"+res[i].created_at+"</td></tr>");
@@ -67,6 +69,7 @@ $("#agregar").click(function(){
     tipo_comentario_id = $("#tipo_comentario_id").val();
     user_id = $("#user_id").val();
     partido_id = $("#id").val();
+    console.log(partido_id);
     var route = 'http://localhost:8000/comentarios';
     var token = $('#token').val();
     

@@ -49,7 +49,7 @@ class PartidosController extends Controller
          * 
          */
        $partidos = Partido::all();
-     // dd($partidos);
+
       return view('partidos.index', ['partidos' => $partidos]);
       
       
@@ -57,6 +57,7 @@ class PartidosController extends Controller
     public function partidos_live()
     {
       $partidos= Partido::with('equipos')
+              ->with('comentarios')
               ->where('partidos.estatus_partido',1)
               ->get();
         return  response()->json($partidos->toArray()) ;

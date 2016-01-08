@@ -8,7 +8,7 @@
       <div class="modal-body">
       
       	<input type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
-      	<input type="hidden" id="id">
+      	<input type="id" id="id">
         @include('jugadores.forms.ajax',['equipos'=>$equipos])
       </div>
       <div class="modal-footer">

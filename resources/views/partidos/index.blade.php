@@ -17,9 +17,10 @@
                         <th></th>
                         
 		</thead>
+                  
                 @foreach($partidos as $partido)
                 <tbody id="contenido">
-                             
+                           
 				<td>{{$partido->campeonato->nombre_campeonato}}</td>
                                 @foreach($partido->equipos as $part)
                                      <td>{{$part->nombre_equipo}}</td>
