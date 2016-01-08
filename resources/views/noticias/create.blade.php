@@ -15,7 +15,7 @@
 <script type="text/javascript" src="{{ url('') }}/tinymce/tinymce_editor.js"></script>
 <script type="text/javascript">
 editor_config.selector = "textarea";
-editor_config.path_absolute = "http://laravel-filemanager.rhcloud.com/";
+editor_config.path_absolute = "http://localhost:8000";
 tinymce.init(editor_config);
 </script>
 @endsection
