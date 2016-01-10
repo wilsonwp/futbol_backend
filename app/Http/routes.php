@@ -21,6 +21,10 @@ Route::resource('jugadores','JugadoresController');
 Route::get('jugadoresList','JugadoresController@listing');
 Route::get('noticiasList','NoticiasController@listing');
 Route::get('jornadasList','JornadasController@listing');
+Route::get('jornadas/show/{id}','JornadasController@show');
+Route::get('equipos/show/{id}','EquiposController@show');
+Route::get('tecnicos/show/{id}','TecnicosController@show');
+Route::get('arbitros/show/{id}','ArbitrosController@show');
 Route::resource('login','LoginController');
 Route::get('logout','LoginController@logout');
 Route::get('password/email', 'Auth\PasswordController@getEmail');
@@ -44,3 +48,4 @@ Route::resource('comentarios','ComentariosController');
 Route::group(array('middleware' => ''), function(){
     Route::controller('filemanager', 'FilemanagerLaravelController');
 });
+Route::delete('/tecnicos/borrar/{id}','TecnicosController@borrar');

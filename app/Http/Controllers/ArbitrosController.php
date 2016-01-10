@@ -48,7 +48,8 @@ class ArbitrosController extends Controller
 
     public function show($id)
     {
-        //
+        return Arbitro::find($id);
+     
     }
 
     /**
@@ -78,11 +79,11 @@ class ArbitrosController extends Controller
         Session::flash('message','Datos de Tecnico Actualizado con Exito');
         return Redirect::to('/arbitros');
     }
-    public function destroy($id)
+     public function destroy($id)
     {
-        Arbitro::destroy($id);
-        Session::flash('message','Arbitro Eliminado');
-        return Redirect::to('/arbitros');
-        
+       $this->arbitro->delete();
+       return response()->json([
+           'mensaje'=>'Borrado'
+       ]);
     }
 }

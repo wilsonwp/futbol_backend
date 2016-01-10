@@ -14,7 +14,7 @@ class JornadasController extends Controller
 {
     public function __construct(){
          $this->middleware('auth');
-        $this->beforeFilter('@find_jornada',['only' => ['edit','update','destroy']]);
+        $this->beforeFilter('@find_jornada',['only' => ['edit','update','destroy','show']]);
     }
     public function find_jornada(Route $route){
         $this->jornada = Jornada::find($route->getParameter('jornadas'));
@@ -61,14 +61,16 @@ class JornadasController extends Controller
                 );
     }
 
-    public function show($id)
+    public function show(Request $request,$id)
     {
-        //
+        return Jornada::find($id);
+     
     }
 
     public function edit($id)
     {
-       $campeonatos = Campeonato::lists('nombre','id');
+       
+       $campeonatos = Campeonato::lists('nombre_campeonato','id');
        return view('jornadas.edit',['jornada'=>$this->jornada,'campeonatos'=>$campeonatos]);
         //
     }
@@ -81,11 +83,11 @@ class JornadasController extends Controller
         return Redirect::to('/jornadas');
     }
 
-    public function destroy($id)
+     public function destroy($id)
     {
-        Jornada::destroy($id);
-        Session::flash('message','Jornada Eliminada');
-        return Redirect::to('/jornadas');
-        
+       $this->jornada->delete();
+       return response()->json([
+           'mensaje'=>'Borrado'
+       ]);
     }
 }

@@ -18,6 +18,7 @@ use Session;
 use Redirect;
 use DB;
 use futboleros\Log;
+use TipoComentario;
 
 class PartidosController extends Controller
 {
@@ -56,8 +57,7 @@ class PartidosController extends Controller
     }
     public function partidos_live()
     {
-      $partidos= Partido::with('equipos')
-              ->with('comentarios')
+      $partidos= Partido::with('equipos','comentarios')
               ->where('partidos.estatus_partido',1)
               ->get();
         return  response()->json($partidos->toArray()) ;

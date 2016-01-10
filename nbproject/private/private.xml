@@ -3,9 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/wp_project/package.json</file>
-            <file>file:/C:/xampp/htdocs/wp_project/config/app.php</file>
-            <file>file:/C:/xampp/htdocs/wp_project/composer.json</file>
+            <file>file:/C:/xampp/htdocs/wp_project/resources/views/jornadas/modal.blade.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/public/js/jornadas/borrar.js</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Http/Controllers/JornadasController.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Http/routes.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Http/Controllers/JugadoresController.php</file>
+            <file>file:/C:/xampp/htdocs/wp_project/app/Http/Controllers/PartidosController.php</file>
         </group>
     </open-files>
 </project-private>

@@ -7,14 +7,14 @@ use Illuminate\Http\Request;
 use futboleros\Http\Requests;
 use futboleros\Http\Controllers\Controller;
 use futboleros\Log;
-use Illuminate\Routing\Route;
 use futboleros\Tecnico;
+use Illuminate\Routing\Route;
 use Session;
 use Redirect;
 class TecnicosController extends Controller
 {
     public function __construct(){
-        $this->middleware('auth');
+        $this->middleware('auth'); 
         $this->beforeFilter('@find',['only' => ['edit','update','destroy']]);
     }
      //este metodo busca los parametros que usan los metodos edit, update y destroy
@@ -61,7 +61,8 @@ class TecnicosController extends Controller
      */
     public function show($id)
     {
-        //
+        return Tecnico::find($id);
+     
     }
 
     /**
@@ -91,11 +92,11 @@ class TecnicosController extends Controller
         Session::flash('message','Datos de Tecnico Actualizado con Exito');
         return Redirect::to('/tecnicos');
     }
-    public function destroy($id)
+     public function destroy($id)
     {
-        Tecnico::destroy($id);
-        Session::flash('message','Tecnico Eliminado');
-        return Redirect::to('/tecnicos');
-        
+       $this->tecnico->delete();
+       return response()->json([
+           'mensaje'=>'Borrado'
+       ]);
     }
 }

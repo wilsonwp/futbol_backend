@@ -1,5 +1,6 @@
 @extends('layouts.admin')
 @section('content')
+@include('equipos.modal')
 	<table class="table">
 		<thead>
                         <th>Nombre</th>
@@ -11,6 +12,7 @@
 			<th>Estatus</th>
                         <th>Estadio</th>
                         <th>Tecnico Actual</th>
+                        <th></th>
                         <th></th>
 			
                         
@@ -28,15 +30,14 @@
                         <td>{{$equipo->tecnico->nombre}}</td>
                       
                         <td>{!! link_to_route('equipos.edit', $title = 'editar', $parameters = $equipo->id, $attributes = ['class'=>'btn btn-primary']);!!}</td>
-                        
+                        <td><div><button value="{{$equipo->id}}" class='btn btn-danger' onclick="mostrar(this)" data-toggle="modal" data-target="#myModal">Eliminar</button></td> 
                         
                         
 		</tbody>
                 
                 @endforeach
-               
-	
-	
 	</table>
+            
           {!!$equipos->render()!!}
+          {!!Html::script('js/equipos/borrar.js')!!}
 	@endsection

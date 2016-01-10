@@ -8,7 +8,7 @@
       <div class="modal-body">
       
       	<input type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
-      	<input type="" id="id">
+      	<input type="hidden" id="id">
         <input type="hidden" id="user_id" value="{{Auth::user()->id}}" >
         @include('partidos.forms.camp-minuto-a-minuto')
         

@@ -46,9 +46,10 @@ class EquiposController extends Controller
         
     }
 
-    public function show($id)
+     public function show(Request $request,$id)
     {
-        //
+        return Equipo::find($id);
+     
     }
 
     public function edit($id)
@@ -67,11 +68,11 @@ class EquiposController extends Controller
         return Redirect::to('/equipos');
         //
     }
-    public function destroy($id)
+     public function destroy($id)
     {
-        Equipo::destroy($id);
-        Session::flash('message','Equipo Eliminado');
-        return Redirect::to('/equipos');
-        
+       $this->equipo->delete();
+       return response()->json([
+           'mensaje'=>'Borrado'
+       ]);
     }
 }
