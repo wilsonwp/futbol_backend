@@ -39,34 +39,14 @@ class ComentariosController extends Controller
      */
     public function store(Request $request)
     {
-        switch ($request['tipo_comentario_id']):
-            case 0:
-                $request['clase_css_tipo'] = 'tl-wrap b-info';
-                $request['clase_css_posicion'] = 'tl-item';
-                break;
-            case 1:
-                $request['clase_css_tipo'] = 'tl-wrap b-info';
-                $request['clase_css_posicion'] = 'tl-item';
-                break;
-            case 2:
-                $request['clase_css_tipo'] = 'tl-content panel padder b-a';
-                $request['clase_css_posicion'] = 'tl-item';
-                break;
-            case 3:
-                $request['clase_css_tipo'] = 'tl-wrap b-success';
-                $request['clase_css_posicion'] = 'tl-item tl-left';
-                break;
-            case 4:
-                $request['clase_css_tipo'] = 'tl-wrap b-primary';
-                $request['clase_css_posicion'] = 'tl-item';
-                break;
-        endswitch;
+       
            Comentario::create($request->all());
            return response()->json([
                
                "mensaje"=>"Comentario Creado con Exito"
            ]);
     }
+  
 
     /**
      * Display the specified resource.
@@ -76,6 +56,10 @@ class ComentariosController extends Controller
      */
     public function show($id)
     {
+         $comentarios = Comentario::where('partido_id',$id)
+             ->get()
+             ;
+     return response()->json($comentarios->toArray());
         //
     }
 

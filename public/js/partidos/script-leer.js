@@ -30,7 +30,7 @@ function mostrar(btn){
     
 }
 function mostrar2(btn){
-    var route = 'http://localhost:8000/comentarios/'+btn.value;
+    var route = 'http://localhost:8000/comentarios/show/'+btn.value;
     $("#id").val(btn.value);
    $("#contenido").empty();
       $.get(route,function(res){
@@ -47,7 +47,7 @@ function mostrar2(btn){
     
 }
 function comentarios_new(id){
-    var route2 = 'http://localhost:8000/comentarios/'+id+'';
+    var route2 = 'http://localhost:8000/comentarios/show/'+id+'';
         $("#contenido").val("");
         $("#titulo").val("");
         $("#contenido").empty();
@@ -69,7 +69,7 @@ $("#agregar").click(function(){
     tipo_comentario_id = $("#tipo_comentario_id").val();
     user_id = $("#user_id").val();
     partido_id = $("#id").val();
-    var route = 'http://localhost:8000/comentarios';
+    var route = 'http://localhost:8000/comentarios/store';
     var token = $('#token').val();
     $.ajax({
              url: route,
