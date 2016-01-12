@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 @include('alerts.message')
+@include('campeonatos.modal')  
 <div class="table-responsive">
 	<table class="table table-striped">
 		<thead>
@@ -10,6 +11,7 @@
 			<th>Fecha Inicio</th>
                         <th>Fecha Fin</th>
                         <th>Acciones</th>
+                        <th></th>
                         <th></th>
                         
 		</thead>
@@ -22,13 +24,13 @@
                                 <td>{{$campeonato->fecha_inic}}</td>
                                 <td>{{$campeonato->fecha_fin}}</td>
                                 <td>{!! link_to_route('campeonatos.edit', $title = 'editar', $parameters = $campeonato->id, $attributes = ['class'=>'btn btn-primary']);!!}</td>
-                                <td></td>
+                                <td><div><button value="{{$campeonato->id}}" class='btn btn-danger' onclick="mostrar(this)" data-toggle="modal" data-target="#myModal">Eliminar</button></td> 
                                 
                                 
 			</tbody>
 		@endforeach
                 @section('scripts')
-                {!!Html::script('js/script-borrar.js')!!}
+                {!!Html::script('js/campeonatos/borrar.js')!!}
                 @endsection
 	
 	

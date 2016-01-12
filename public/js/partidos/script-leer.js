@@ -69,10 +69,8 @@ $("#agregar").click(function(){
     tipo_comentario_id = $("#tipo_comentario_id").val();
     user_id = $("#user_id").val();
     partido_id = $("#id").val();
-    console.log(partido_id);
     var route = 'http://localhost:8000/comentarios';
     var token = $('#token').val();
-    
     $.ajax({
              url: route,
              headers: {'X-CSRF-TOKEN': token},

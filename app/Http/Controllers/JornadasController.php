@@ -22,7 +22,7 @@ class JornadasController extends Controller
     public function index()
     {
       
-      $jornadas = Jornada::paginate(10);
+      $jornadas = Jornada::paginate(10) ;
       $campeonatos = Campeonato::lists('nombre_campeonato','id');
       return view('jornadas.index', ['jornadas' => $jornadas,'campeonatos',$campeonatos]);
     }

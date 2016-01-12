@@ -42,9 +42,10 @@ class CampeonatosController extends Controller
         //
     }
 
-    public function show($id)
+    public function show(Request $request,$id)
     {
-        //
+        return Campeonato::find($id);
+     
     }
 
     public function edit($id)
@@ -60,11 +61,11 @@ class CampeonatosController extends Controller
         Session::flash('message','Campeonato Actualizado con Exito');
         return Redirect::to('/campeonatos');
     }
-    public function destroy($id)
+     public function destroy($id)
     {
-        Campeonato::destroy($id);
-        Session::flash('message','Campeonato Eliminado');
-        return Redirect::to('/campeonatos');
-        
+       $this->campeonato->delete();
+       return response()->json([
+           'mensaje'=>'Borrado'
+       ]);
     }
 }

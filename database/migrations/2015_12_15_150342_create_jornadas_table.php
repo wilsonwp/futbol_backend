@@ -17,6 +17,9 @@ class CreateJornadasTable extends Migration
             $table->integer('numero');
             $table->date('fecha');
             $table->timestamps();
+            $table->foreign('campeonato_id')
+            ->references('id')->on('campeonatos')
+             ->onDelete('cascade');
         });
     }
 

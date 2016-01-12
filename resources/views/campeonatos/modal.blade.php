@@ -8,7 +8,7 @@
       <div class="modal-body">
       	<input type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
       	<input type="hidden" id="id">
-        <h3>Esta Seguro de Eliminar la Jornada?. Esto Borrará Partidos Relacionados</h3>
+        <h3>Esta Seguro de Eliminar la Campeonato?. Esto Borrará Jornadas Partidos y Equipos Relacionados</h3>
       </div>
       <div class="modal-footer">
       {!!link_to('#', $title='Si', $attributes = ['id'=>'si', 'class'=>'btn btn-danger','onclick'=>'eliminar()'], $secure = null)!!}

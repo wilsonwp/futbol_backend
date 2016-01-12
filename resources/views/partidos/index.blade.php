@@ -10,6 +10,7 @@
 <table class="table" id="">
 		<thead>
 			<th>Liga</th>
+                        <th>Jornada</th>
                         <th>Equipo Local</th>
 			<th>Equipo visitante</th>
                         <th>Estatus del Partido</th>
@@ -21,7 +22,8 @@
                 @foreach($partidos as $partido)
                 <tbody id="contenido">
                            
-				<td>{{$partido->campeonato->nombre_campeonato}}</td>
+                                <td>@if(!empty($partido->campeonato->nombre_campeonato)) {{$partido->campeonato->nombre_campeonato}}@endif</td>
+                                <td>@if(!empty($partido->jornada->numero)) {{$partido->jornada->numero}}@endif</td>
                                 @foreach($partido->equipos as $part)
                                      <td>{{$part->nombre_equipo}}</td>
                                 @endforeach

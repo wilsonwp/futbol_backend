@@ -20,4 +20,5 @@ class Campeonato extends Model
     public function partido(){
         return $this->hasMany('futboleros\Partido');
     }
+     
 }

@@ -20,14 +20,14 @@
                 @foreach ($equipos as $equipo)
                 <tbody>
 			<td>{{$equipo->nombre_equipo}}</td>
-                        <td>{{$equipo->campeonato->nombre_campeonato}}</td>
+                       <td>@if(!empty($equipo->campeonato->nombre_campeonato)) {{$equipo->campeonato->nombre_campeonato}}@endif</td>
 			<td>{{$equipo->alias}}</td>
                         <td>{{$equipo->fecha_fundacion}}</td>
                         <td>{{$equipo->presidente_actual}}</td>
                         <td>{{$equipo->nombre_hinchada}}</td>
                         <td>{{$equipo->presidente_actual}}</td>
                         <td>{{$equipo->nombre_estadio}}</td>
-                        <td>{{$equipo->tecnico->nombre}}</td>
+                        <td>@if(!empty($equipo->tecnico->nombre)) {{$equipo->tecnico->nombre}}@endif</td>
                       
                         <td>{!! link_to_route('equipos.edit', $title = 'editar', $parameters = $equipo->id, $attributes = ['class'=>'btn btn-primary']);!!}</td>
                         <td><div><button value="{{$equipo->id}}" class='btn btn-danger' onclick="mostrar(this)" data-toggle="modal" data-target="#myModal">Eliminar</button></td> 

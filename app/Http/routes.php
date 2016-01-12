@@ -24,6 +24,7 @@ Route::get('jornadasList','JornadasController@listing');
 Route::get('jornadas/show/{id}','JornadasController@show');
 Route::get('equipos/show/{id}','EquiposController@show');
 Route::get('tecnicos/show/{id}','TecnicosController@show');
+Route::get('campeonatos/show/{id}','CampeonatosController@show');
 Route::get('arbitros/show/{id}','ArbitrosController@show');
 Route::resource('login','LoginController');
 Route::get('logout','LoginController@logout');
