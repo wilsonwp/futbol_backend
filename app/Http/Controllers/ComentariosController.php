@@ -55,7 +55,6 @@ class ComentariosController extends Controller
                                         </a>
                                         <div class="clear">
                                           <p>'.$request['contenido'].'</p>
-                                          
                                         </div>
                                       </div>
                                     </div>
