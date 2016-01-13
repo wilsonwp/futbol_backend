@@ -50,4 +50,9 @@ Route::get('comentarios/show/{id}','ComentariosController@show');
 Route::group(array('middleware' => ''), function(){
     Route::controller('filemanager', 'FilemanagerLaravelController');
 });
+Route::group(['prefix' => 'api'], function()
+{
+    Route::resource('authenticate', 'AuthenticateController', ['only' => ['index']]);
+    Route::post('authenticate', 'AuthenticateController@authenticate');
+});
 Route::delete('/tecnicos/borrar/{id}','TecnicosController@borrar');
