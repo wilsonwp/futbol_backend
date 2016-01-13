@@ -38,8 +38,10 @@ class ComentariosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {        switch ($request['tipo_comentario_id']):
-                case 0 :
+    {        
+        $request['look'] ='';
+        switch ($request['tipo_comentario_id']):
+                case 1 :
                     $request['look'] = '<li class="tl-item" ng-repeat="comentario in comentarios">
                                 <div class="tl-wrap b-info">
                                 <span class="tl-date">'.$request['minuto'].'</span>
@@ -49,7 +51,7 @@ class ComentariosController extends Controller
                                  </div>
                                  </li>';
                     break;
-                case 1 :
+                case 2 :
                      $request['look'] = '<li class="tl-item" ng-repeat="comentario in comentarios">
                                 <div class="tl-wrap b-info">
                                 <span class="tl-date">'.$request['minuto'].'</span>
@@ -59,7 +61,7 @@ class ComentariosController extends Controller
                                  </div>
                                  </li>';
                     break;
-                case 2 :
+                case 3 :
                      $request['look'] = '<li class="tl-item">
                                          <div class="tl-wrap">
                                           <span class="tl-date">'.$request['minuto'].'</span>
@@ -70,10 +72,10 @@ class ComentariosController extends Controller
                                              </div>
                                              </li>';
                     break;
-                case 3 :
+                case 4 :
                      $request['look'] = '<li class="tl-item tl-left">
                                               <div class="tl-wrap b-success">
-                                           <span class="tl-date">'.$request['minuto'].'/span>
+                                           <span class="tl-date">'.$request['minuto'].'</span>
                                             <div class="tl-content panel bg-success padder">
                                             <span class="arrow arrow-success left pull-up hidden-left"></span>
                                            <span class="arrow arrow-success right pull-up visible-left"></span>
@@ -82,7 +84,7 @@ class ComentariosController extends Controller
                                            </div>
                                              </li>';
                     break;
-                case 4 :
+                case 5 :
                      $request['look'] = '  <li class="tl-item">
                                             <div class="tl-wrap b-primary">
                                             <span class="tl-date">'.$request['minuto'].'</span>
