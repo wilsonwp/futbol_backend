@@ -69,6 +69,7 @@ $("#agregar").click(function(){
     tipo_comentario_id = $("#tipo_comentario_id").val();
     user_id = $("#user_id").val();
     partido_id = $("#id").val();
+     equipo_calidad = $("#equipo_calidad").val();
     var route = 'http://localhost:8000/comentarios/store';
     var token = $('#token').val();
     $.ajax({
@@ -82,12 +83,12 @@ $("#agregar").click(function(){
                  contenido: contenido,
                  user_id: user_id,
                  partido_id: partido_id,
-                 minuto:minuto
+                 minuto:minuto,
+                 equipo_calidad:equipo_calidad
                 },
              success: function(){
                  $('#comentario').val('');
                  $('#titulo').val('');
-                  $('#minuto').val('');
                  comentarios_new(partido_id);
              },
             error: function(msj){

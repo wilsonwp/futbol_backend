@@ -7,6 +7,7 @@ use futboleros\Http\Requests;
 use futboleros\Http\Controllers\Controller;
 use JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
+use futboleros\User;
 
 class AuthenticateController extends Controller
 {
