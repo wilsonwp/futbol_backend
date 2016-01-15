@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comentario extends Model
 {
-   protected $fillable = ['minuto','user_id','partido_id','contenido','tipo_comentario_id','titulo','look'];
+   protected $fillable = ['minuto','user_id','partido_id','contenido','tipo_comentario_id','titulo','equipo_calidad'];
    public function partido(){
        return $this->belongsTo('\futboleros\Partido');
    }

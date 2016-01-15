@@ -19,7 +19,7 @@ class UserController extends Controller
 {
     
     public function __construct(){
-        $this->middleware('auth');
+        $this->middleware('cors');
         $this->beforeFilter('@find',['only' => ['emailSender']]);
     }
   
@@ -80,9 +80,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request,$id)
     {
-        //
+        return User::find($id);
+     
     }
    
 

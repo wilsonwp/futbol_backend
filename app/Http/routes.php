@@ -13,6 +13,7 @@
 Route::get('/','BackendController@index');
 Route::get('admin','BackendController@admin');
 Route::resource('users','UserController');
+Route::resource('hinchas','HinchasController');
 Route::resource('campeonatos','CampeonatosController');
 Route::resource('equipos','EquiposController');
 Route::resource('jornadas','JornadasController');
@@ -22,6 +23,7 @@ Route::get('jugadoresList','JugadoresController@listing');
 Route::get('noticiasList','NoticiasController@listing');
 Route::get('jornadasList','JornadasController@listing');
 Route::get('jornadas/show/{id}','JornadasController@show');
+Route::get('users/show/{id}','UserController@show');
 Route::get('equipos/show/{id}','EquiposController@show');
 Route::get('tecnicos/show/{id}','TecnicosController@show');
 Route::get('campeonatos/show/{id}','CampeonatosController@show');
