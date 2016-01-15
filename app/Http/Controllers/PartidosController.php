@@ -18,6 +18,7 @@ use Session;
 use Redirect;
 use DB;
 use futboleros\Log;
+use futboleros\Gol;
 use TipoComentario;
 
 class PartidosController extends Controller

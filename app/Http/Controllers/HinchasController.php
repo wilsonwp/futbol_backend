@@ -3,7 +3,6 @@
 namespace futboleros\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use futboleros\Http\Requests;
 use futboleros\Http\Controllers\Controller;
 use futboleros\Hincha;
@@ -48,8 +47,24 @@ class HinchasController extends Controller
      */
     public function store(Request $request)
     {
-        $new_usuario = new User();
-        $new_usuario->create($request->all());
+        $newUsuario = new User();
+        $newHincha = new Hincha();
+        $newUsuario->create([
+            'nombre' =>$request['nombre'],
+            'email'=>$request['email'],
+           'estatus' =>1,
+            'password'=> bcrypt($request['password'])
+            ]);
+        $usuarioId = $newUsuario->all()->last();
+        $newHincha->create([ 
+            'user_id'=>$usuarioId->id,
+            'num_celular'=>$request['telefono'],
+            'nombre'=>$request['nombre'],
+            'fecha_nacimiento'=>$request['fecha_nacimiento']
+
+            
+            ]);
+
        return response()->json(['mensaje'=>'Hincha creado con Exito']);  
     }
 

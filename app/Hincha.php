@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Hincha extends Model
 {
-   protected $fillable =['name','email','password','fecha_nacimiento','sexo','num_celular','estatus'];
+   protected $fillable =['nombre','email','fecha_nacimiento','sexo','num_celular','user_id'];
 
-
-   public function ususrio(){
-   		return $this->belongsTo('\futboleros\User');
+   public function usuario(){
+   	return $this->belongsTo('\futboleros\User');
    }
+
 }
