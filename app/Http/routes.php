@@ -13,6 +13,7 @@
 Route::get('/','BackendController@index');
 Route::get('admin','BackendController@admin');
 Route::resource('users','UserController');
+Route::resource('hinchas','HinchasController');
 Route::resource('campeonatos','CampeonatosController');
 Route::resource('equipos','EquiposController');
 Route::resource('jornadas','JornadasController');

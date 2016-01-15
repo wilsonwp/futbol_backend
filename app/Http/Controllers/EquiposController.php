@@ -5,6 +5,7 @@ use \futboleros\Campeonato;
 use \futboleros\Tecnico;
 use \futboleros\Estadio;
 use Illuminate\Http\Request;
+use futboleros\Http\Requests\EquiposRequest;
 use Session;
 use Redirect;
 use futboleros\Http\Requests;
@@ -26,7 +27,7 @@ class EquiposController extends Controller
     
     public function index()
     {
-      $equipos = Equipo::paginate(10);
+      $equipos = Equipo::paginate(8);
       return view('equipos.index', ['equipos' => $equipos]);
     }
 
@@ -38,7 +39,7 @@ class EquiposController extends Controller
       return view('equipos.create',['campeonatos'=>$campeonatos,'tecnicos'=>$tecnicos,'estadios'=>$estadios]);
     }
     
-    public function store(Request $request)
+    public function store(EquiposRequest $request)
     {
        Equipo::create($request->all());
         Session::flash('message','Equipo Creado con Exito');
@@ -60,7 +61,7 @@ class EquiposController extends Controller
       return view('equipos.edit',['campeonatos'=>$campeonatos,'tecnicos'=>$tecnicos,'estadios'=>$estadios,'equipo'=>$this->equipo]);
         
     }
-    public function update(Request $request, $id)
+    public function update(EquiposRequest $request, $id)
     {
         $this->equipo->fill($request->all());
         $this->equipo->save();
