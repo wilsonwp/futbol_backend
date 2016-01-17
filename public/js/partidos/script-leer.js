@@ -34,6 +34,29 @@ function mostrar2(btn){
     $("#id").val(btn.value);
    $("#contenido").empty();
       $.get(route,function(res){
+        console.log(res);
+        var contenido = $("#contenido");
+        for( i =0; i < res.length; i++){
+             contenido.append("<tr><td>Min. "+res[i].minuto+"</td><td>"+res[i].titulo+"</td><td>"+res[i].contenido+"</td><td>"+res[i].created_at+"</td></tr>");
+        }
+        
+        
+        
+    });
+    
+    
+    
+}
+function mostrar4(btn){
+    var route = 'http://localhost:8000/partidos/setMarcador/'+btn.value;
+    
+   $("#contenido").empty();
+
+      $.get(route,function(res){
+      
+        console.log(res[0]);
+        $("#lblLocal").html(res[0].equipos[0].nombre_equipo);
+         $("#lblVisitante").html(res[0].equipos[1].nombre_equipo);
         var contenido = $("#contenido");
         for( i =0; i < res.length; i++){
              contenido.append("<tr><td>Min. "+res[i].minuto+"</td><td>"+res[i].titulo+"</td><td>"+res[i].contenido+"</td><td>"+res[i].created_at+"</td></tr>");

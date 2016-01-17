@@ -32,4 +32,8 @@ class Equipo extends Model
     public function partidos(){
         return $this->belongsToMany('futboleros\Partido');
     }
+    public function goles(){
+        return $this->hasMany('futboleros\Gol');
+    }
+
 }
