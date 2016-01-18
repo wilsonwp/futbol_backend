@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ?php
+=======
+<?php
+>>>>>>> c3ad6474361fdf1b1ded0e804a19bdd60792b632
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;

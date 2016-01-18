@@ -19,7 +19,10 @@ use Redirect;
 use DB;
 use futboleros\Log;
 use futboleros\Gol;
+<<<<<<< HEAD
 use futboleros\Resultado;
+=======
+>>>>>>> c3ad6474361fdf1b1ded0e804a19bdd60792b632
 use TipoComentario;
 
 class PartidosController extends Controller
@@ -59,13 +62,18 @@ class PartidosController extends Controller
     }
     public function partidos_live()
     {
+<<<<<<< HEAD
       $partidos= Partido::with('equipos','comentarios','goles','resultados')
+=======
+      $partidos= Partido::with('equipos','comentarios','goles')
+>>>>>>> c3ad6474361fdf1b1ded0e804a19bdd60792b632
               ->where('partidos.estatus_partido',1)
               ->get();
         return  response()->json($partidos->toArray()) ;
       
       
     }
+<<<<<<< HEAD
     public function getMarcador($partido,$equipo){
          $goles= Gol::where('partido_id',$partido)
                 ->where('equipo_id',$equipo)
@@ -73,6 +81,18 @@ class PartidosController extends Controller
         return  response()->json($goles) ;
 
       
+=======
+    public function setMarcador($idPartido){
+            $partidos= Partido::find($idPartido)
+                ->with('equipos','goles')
+              ->where('partidos.id',$idPartido)
+              ->get();
+        return  response()->json($partidos->toArray()) ;
+
+    }
+    public function actualizarMarcador($partido,$equipo){
+
+>>>>>>> c3ad6474361fdf1b1ded0e804a19bdd60792b632
     }
     public function setMarcador($idPartido){
             $partidos= Partido::find($idPartido)
@@ -158,6 +178,7 @@ class PartidosController extends Controller
             'calidad'=>1,
         'partido_id'=>$id_partido->id,
          'equipo_id' => $request['equipo_visitante']
+<<<<<<< HEAD
             ]);
          $marcador = new Resultado();
          $marcador->create([
@@ -165,6 +186,8 @@ class PartidosController extends Controller
              'goles_local'=>0,
              'goles_visitante'=>0
 
+=======
+>>>>>>> c3ad6474361fdf1b1ded0e804a19bdd60792b632
             ]);
        
         Session::flash('message','Partido Creado con Exito');

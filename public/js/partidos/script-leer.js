@@ -36,9 +36,35 @@ function mostrar2(btn){
     $("#id").val(btn.value);
    $("#contenido").empty();
       $.get(route,function(res){
+<<<<<<< HEAD
         equipo_id = res[0].equipos[0].id;
         $("#equipo_id").append("<option value='"+res[0].equipos[0].id+"'>"+res[0].equipos[0].nombre_equipo+"</option><option value='"+res[0].equipos[0].id+"'>"+res[0].equipos[1].nombre_equipo+"</option>");
         console.log(res[0]);
+=======
+        console.log(res[0].comentarios);
+        var contenido = $("#contenido");
+        for( i =0; i < res[0].comentarios.length; i++){
+             contenido.append("<tr><td>Min. "+res[0].comentarios[i].minuto+"</td><td>"+res[0].comentarios[i].titulo+"</td><td>"+res[0].comentarios[i].contenido+"</td><td>"+res[0].comentarios[i].created_at+"</td></tr>");
+        }
+        
+        
+        
+    });
+    
+    
+    
+}
+function mostrar4(btn){
+    var route = 'http://localhost:8000/partidos/setMarcador/'+btn.value;
+    
+   $("#contenido").empty();
+
+      $.get(route,function(res){
+      
+        console.log(res[0]);
+        $("#lblLocal").html(res[0].equipos[0].nombre_equipo);
+         $("#lblVisitante").html(res[0].equipos[1].nombre_equipo);
+>>>>>>> c3ad6474361fdf1b1ded0e804a19bdd60792b632
         var contenido = $("#contenido");
         for( i =0; i < res[0].comentarios.length; i++){
              contenido.append("<tr><td>Min. "+res[0].comentarios[i].minuto+"</td><td>"+res[0].comentarios[i].titulo+"</td><td>"+res[0].comentarios[i].contenido+"</td><td>"+res[0].comentarios[i].created_at+"</td></tr>");
@@ -99,7 +125,10 @@ $("#agregar").click(function(){
     tipo_comentario_id = $("#tipo_comentario_id").val();
     user_id = $("#user_id").val();
     partido_id = $("#id").val();
+<<<<<<< HEAD
     equipo_id = $("#equipo_id").val();
+=======
+>>>>>>> c3ad6474361fdf1b1ded0e804a19bdd60792b632
      equipo_calidad = $("#equipo_calidad").val();
     var route = 'http://localhost:8000/comentarios/store';
     var token = $('#token').val();
@@ -114,7 +143,10 @@ $("#agregar").click(function(){
                  contenido: contenido,
                  user_id: user_id,
                  partido_id: partido_id,
+<<<<<<< HEAD
                  equipo_id: equipo_id,
+=======
+>>>>>>> c3ad6474361fdf1b1ded0e804a19bdd60792b632
                  minuto:minuto,
                  equipo_calidad:equipo_calidad
                 },

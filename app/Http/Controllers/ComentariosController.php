@@ -8,8 +8,11 @@ use futboleros\Http\Requests;
 use futboleros\Http\Controllers\Controller;
 use futboleros\Log;
 use futboleros\Partido;
+<<<<<<< HEAD
 use futboleros\EquipoPartido;
 use futboleros\Gol;
+=======
+>>>>>>> c3ad6474361fdf1b1ded0e804a19bdd60792b632
 
 class ComentariosController extends Controller
 {
@@ -34,6 +37,7 @@ class ComentariosController extends Controller
         //
     }
     public function store(Request $request)
+<<<<<<< HEAD
     { 
             switch ($request['tipo_comentario_id']) {
                   case 4:
@@ -44,6 +48,9 @@ class ComentariosController extends Controller
                         ]);
                       break;
               }  
+=======
+    {   
+>>>>>>> c3ad6474361fdf1b1ded0e804a19bdd60792b632
            Comentario::create($request->all());
            return response()->json([
                
