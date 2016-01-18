@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Partido extends Model
 {
-    protected $fillable= ['estadio','equipo_visitante','equipo_local','jornada_id','nombre_arbitro','campeonato_id','estatus_partido'];
+    protected $fillable= ['estadio','equipo_visitante','equipo_local','jornada_id','nombre_arbitro','campeonato_id','estatus_partido','calidad'];
   //***** Relaciones entre las Clases****//
   // Un Partido Pertenece a Una Jornada
     function jornada(){

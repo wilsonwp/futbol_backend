@@ -90,6 +90,17 @@
                             </ul>
                         </li>
                          <li>
+                            <a href="#">Usuarios<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                 <li>
+                                    <a href="{!!URL::to('/users')!!}"><i class='fa fa-plus fa-fw'></i>Listado de Usuarios</a>
+                                </li>
+                                <li>
+                                    <a href="/users/create"><i class='fa fa-plus fa-fw'></i> Crear Nuevo Usuario</a>
+                                </li>
+                            </ul>
+                        </li>
+                         <li>
                             <a href="#">Sistema<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                  <li>

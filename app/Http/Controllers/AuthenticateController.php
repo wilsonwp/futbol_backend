@@ -11,6 +11,9 @@ use futboleros\User;
 
 class AuthenticateController extends Controller
 {
+    public function __construct(){
+        $this->middleware('cors');
+    }
     
     public function authenticate(Request $request){
         $credentials = $request->only('email','password');

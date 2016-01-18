@@ -7,6 +7,7 @@ use futboleros\Comentario;
 use futboleros\Http\Requests;
 use futboleros\Http\Controllers\Controller;
 use futboleros\Log;
+use futboleros\Partido;
 
 class ComentariosController extends Controller
 {
@@ -40,7 +41,8 @@ class ComentariosController extends Controller
     }
     public function show($id)
     {
-         $comentarios = Comentario::where('partido_id',$id)
+         $comentarios = Partido::where('partidos.id',$id)
+             ->with('equipos','comentarios')
              ->get()
              ;
      return response()->json($comentarios->toArray());

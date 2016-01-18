@@ -11,22 +11,22 @@ use Redirect;
 use Mail;
 use Illuminate\Routing\Route;
 use futboleros\Log;
+use futboleros\User;
+
 
 class HinchasController extends Controller
 {
-    
     public function __construct(){
-        $this->beforeFilter('@find',['only' => ['emailSender']]);
+        $this->middleware('cors');
     }
-  
-    public function find(Route $route){
-        $this->hincha = Hincha::find($route->getParameter('hinchas'));
-   
-    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-      $hinchas = Hincha::paginate(5);
-      return view('usuarios.index',compact('hinchas'));
+        //
     }
 
     /**
@@ -36,7 +36,7 @@ class HinchasController extends Controller
      */
     public function create()
     {
-      return view('usuarios.create',compact('tipo_usuarios'));
+        //
     }
 
     /**
@@ -47,15 +47,25 @@ class HinchasController extends Controller
      */
     public function store(Request $request)
     {
-       Hincha::create($request->all());
-       return response()->json(['mensaje'=>'Hincha creado con Exito']);  
-    }
-    function emailSender($email,$password){
-         Mail::send('emails.registro', ['email' => $email,'password' => $password], function ($m) use ($email) {
-            $m->from('garcia.solutions@gmail.com', 'Futboleros');
+        $newUsuario = new User();
+        $newHincha = new Hincha();
+        $newUsuario->create([
+            'nombre' =>$request['nombre'],
+            'email'=>$request['email'],
+           'estatus' =>1,
+            'password'=> bcrypt($request['password'])
+            ]);
+        $usuarioId = $newUsuario->all()->last();
+        $newHincha->create([ 
+            'user_id'=>$usuarioId->id,
+            'num_celular'=>$request['telefono'],
+            'nombre'=>$request['nombre'],
+            'fecha_nacimiento'=>$request['fecha_nacimiento']
 
-            $m->to($email, 'suscriptor')->subject('Datos de Ingreso a Backend del Sistema');
-        });
+            
+            ]);
+
+       return response()->json(['mensaje'=>'Hincha creado con Exito']);  
     }
 
     /**
@@ -68,7 +78,6 @@ class HinchasController extends Controller
     {
         //
     }
-   
 
     /**
      * Show the form for editing the specified resource.
@@ -78,9 +87,7 @@ class HinchasController extends Controller
      */
     public function edit($id)
     {
-      $hincha = Hincha::find($id);
-       $tipo_usuarios = CategoriaHincha::lists('nombre_categoria','id');
-       return view('usuarios.edit',['hincha'=>$hincha,'tipo_usuarios'=>$tipo_usuarios]);
+        //
     }
 
     /**
@@ -90,13 +97,9 @@ class HinchasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(HinchaUpdateRequest $request, $id)
+    public function update(Request $request, $id)
     {
-         $hincha = Hincha::find($id);
-        $hincha->fill($request->all());
-        $hincha->save();
-        Session::flash('message','Usuario Actualizado con Exito');
-        return Redirect::to('/hinchas');
+        //
     }
 
     /**
@@ -107,9 +110,6 @@ class HinchasController extends Controller
      */
     public function destroy($id)
     {
-        Hincha::destroy($id);
-        Session::flash('message','Usuario Eliminado');
-        return Redirect::to('/hinchas');
-        
+        //
     }
 }

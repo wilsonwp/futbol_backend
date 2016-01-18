@@ -18,6 +18,7 @@ use Session;
 use Redirect;
 use DB;
 use futboleros\Log;
+use futboleros\Gol;
 use TipoComentario;
 
 class PartidosController extends Controller
@@ -57,24 +58,23 @@ class PartidosController extends Controller
     }
     public function partidos_live()
     {
-      $partidos= Partido::with('equipos','comentarios')
+      $partidos= Partido::with('equipos','comentarios','goles')
               ->where('partidos.estatus_partido',1)
               ->get();
         return  response()->json($partidos->toArray()) ;
       
       
     }
-    public function partidos_live_local()
-    {
-     $partidos= DB::table('partidos')
-            ->where(['estatus_partido'=>1])
-            ->join('campeonatos', 'partidos.campeonato_id', '=','campeonatos.id' )
-            ->groupBy('partidos.id')
-            ->get()
-              ;
-        return  response()->json($partidos);
-      
-      
+    public function setMarcador($idPartido){
+            $partidos= Partido::find($idPartido)
+                ->with('equipos','goles')
+              ->where('partidos.id',$idPartido)
+              ->get();
+        return  response()->json($partidos->toArray()) ;
+
+    }
+    public function actualizarMarcador($partido,$equipo){
+
     }
 
     /**
@@ -139,15 +139,16 @@ class PartidosController extends Controller
           $id_partido = $partido->all()->last();
          $detalle_partido1 = new EquipoPartido;
          $detalle_partido1->create([
+            'calidad'=>0,
         'partido_id'=>$id_partido->id,
          'equipo_id' => $request['equipo_local'],
-         'calidad' => 0
+         
             ]);
          $detalle_partido2 = new EquipoPartido;
          $detalle_partido2->create([
+            'calidad'=>1,
         'partido_id'=>$id_partido->id,
-         'equipo_id' => $request['equipo_visitante'],
-         'calidad' => 1
+         'equipo_id' => $request['equipo_visitante']
             ]);
        
         Session::flash('message','Partido Creado con Exito');
