@@ -8,6 +8,8 @@ use futboleros\Http\Requests;
 use futboleros\Http\Controllers\Controller;
 use futboleros\Log;
 use futboleros\Partido;
+use futboleros\EquipoPartido;
+use futboleros\Gol;
 
 class ComentariosController extends Controller
 {
@@ -32,7 +34,16 @@ class ComentariosController extends Controller
         //
     }
     public function store(Request $request)
-    {   
+    { 
+            switch ($request['tipo_comentario_id']) {
+                  case 4:
+                      Gol::create([
+                        'equipo_id'=>$request['equipo_id'],
+                        'minuto'=>$request['minuto'],
+                        'partido_id'=>$request['partido_id'],
+                        ]);
+                      break;
+              }  
            Comentario::create($request->all());
            return response()->json([
                

@@ -1,9 +1,9 @@
-?php
+<?php
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateJornadasTable extends Migration
+class CreateResultadosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,15 +12,12 @@ class CreateJornadasTable extends Migration
      */
     public function up()
     {
-        Schema::create('jornadas', function (Blueprint $table) {
+        Schema::create('resultados', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('numero');
-            $table->integer('campeonato_id');
-            $table->date('fecha');
+            $table->integer('goles_local');
+            $table->integer('goles_visitante');
+            $table->integer('partido_id');
             $table->timestamps();
-            $table->foreign('campeonato_id')
-            ->references('id')->on('campeonatos')
-             ->onDelete('cascade');
         });
     }
 
@@ -31,6 +28,6 @@ class CreateJornadasTable extends Migration
      */
     public function down()
     {
-        Schema::drop('jornadas');
+        Schema::drop('resultados');
     }
 }

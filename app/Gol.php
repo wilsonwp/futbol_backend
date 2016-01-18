@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Gol extends Model
 {
-	protected $fillable= ['partido_id','jogador_id','equipo_id','minuto','descripcion']; 
+	protected $fillable= ['partido_id','jugador_id','equipo_id','minuto','descripcion']; 
 
    public function partido(){
        return $this->belongsTo('\futboleros\Partido');

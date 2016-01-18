@@ -21,6 +21,9 @@ class Partido extends Model
     public function goles(){
         return $this->hasMany('\futboleros\Gol');
     }
+    public function resultados(){
+        return $this->hasOne('\futboleros\Resultado');
+    }
     public function comentarios(){
         return $this->hasMany('\futboleros\Comentario');
     }

@@ -19,6 +19,7 @@ use Redirect;
 use DB;
 use futboleros\Log;
 use futboleros\Gol;
+use futboleros\Resultado;
 use TipoComentario;
 
 class PartidosController extends Controller
@@ -58,19 +59,27 @@ class PartidosController extends Controller
     }
     public function partidos_live()
     {
-      $partidos= Partido::with('equipos','comentarios','goles')
+      $partidos= Partido::with('equipos','comentarios','goles','resultados')
               ->where('partidos.estatus_partido',1)
               ->get();
         return  response()->json($partidos->toArray()) ;
       
       
     }
+    public function getMarcador($partido,$equipo){
+         $goles= Gol::where('partido_id',$partido)
+                ->where('equipo_id',$equipo)
+              ->count();
+        return  response()->json($goles) ;
+
+      
+    }
     public function setMarcador($idPartido){
             $partidos= Partido::find($idPartido)
-                ->with('equipos','goles')
+                ->with('equipos','goles','resultados')
               ->where('partidos.id',$idPartido)
               ->get();
-        return  response()->json($partidos->toArray()) ;
+        return  response()->json($partidos) ;
 
     }
     public function actualizarMarcador($partido,$equipo){
@@ -149,6 +158,13 @@ class PartidosController extends Controller
             'calidad'=>1,
         'partido_id'=>$id_partido->id,
          'equipo_id' => $request['equipo_visitante']
+            ]);
+         $marcador = new Resultado();
+         $marcador->create([
+            'partido_id'=>$id_partido->id,
+             'goles_local'=>0,
+             'goles_visitante'=>0
+
             ]);
        
         Session::flash('message','Partido Creado con Exito');
